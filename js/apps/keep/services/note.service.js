@@ -7,7 +7,8 @@ import {storageService} from '../../../services/async-storage-service.js'
 
 export const noteService = {
     query,
-    addNewNote
+    addNewNote,
+    removeNoteById
 }
 const NOTES_KEY = 'NOTES_DB'
 
@@ -52,6 +53,10 @@ function _createNotes() {
 function query() {
     return storageService.query(NOTES_KEY)
   }
+
+function removeNoteById(noteId) {
+    return storageService.remove(NOTES_KEY,noteId)
+}
 
 function addNewNote(note){
     const newNote = {type: note.type, info: _prepareNoteInfo(note)}
