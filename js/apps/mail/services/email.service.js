@@ -40,7 +40,8 @@ function getAllMails() {
             body: 'Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
             isRead: false,
             sentAt: 1656503851958,
-            to: 'user@appsus.com'
+            to: 'user@appsus.com',
+            email: 'lesliea@mail.com',
         },
         {
             id: 'e102',
@@ -49,7 +50,8 @@ function getAllMails() {
             body: 'Velit officia consequat duis enim velit mollit.Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
             isRead: false,
             sentAt: 1656501851958,
-            to: 'user@appsus.com'
+            to: 'user@appsus.com',
+            email: 'albert@mail.com',
         },
         {
             id: 'e143',
@@ -58,7 +60,8 @@ function getAllMails() {
             body: 'Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. ',
             isRead: false,
             sentAt: 1656503801958,
-            to: 'user@appsus.com'
+            to: 'user@appsus.com',
+            email: 'theresa@mail.com',
         },
     ]
     return mails

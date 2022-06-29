@@ -1,49 +1,42 @@
 //Renders a list of <email-preview> pass down an email prop
 import { emailService } from '../services/email.service.js'
 import svgIcons from './svg-icons.cmp.js'
+import emailListRowPrivew from './email-list-row-privew.cmp.js'
+import emailListInRowPrivew from './email-list-in-row-privew.cmp.js'
 
 
 export default {
     template: `
     <section v-if="mails">
-
-      <div class="mail-preview" v-for="mail in mails">
-       
-      
-            <span class="action"></span><svg-icons name="checkBox"/></span>
-            <span class="action"><svg-icons name="star"/></span>
-            <!-- <svg-icons name="clipContent"/> -->
-            <span class="sender-name">{{mail.fullname}}</span>
-        
-
-            <p class="text-privew"><span class=subject-mail-preview>{{mail.subject}}</span><span class="body-mail-preview">{{mail.body}}</span></p>
-        <div class="time-mail">
-           {{sendTimeLocal(mail)}}
-        </div>
-
+      <div v-for="mail in mails" :key="mail.id">
+            <email-list-row-privew :mail="mail" @click="showMailToggle(mail)" />
+            <email-list-in-row-privew v-if="showMail === mail" :mail="showMail"/>
       </div>
     </section>
 `,
     data() {
         return {
             mails: null,
+            showMail: null
         }
     },
     components: {
-        svgIcons
+        svgIcons,
+        emailListRowPrivew,
+        emailListInRowPrivew
     },
     created() {
         this.mails = emailService.getAllMails()
 
     },
     methods: {
-        sendTimeLocal(mail) {
-            console.log(mail.sentAt)
-            return new Date(mail.sentAt).toDateString()
+        showMailToggle(mail) {
+            this.showMail = this.showMail === mail ? null : mail
+            // this.showMail = mail
         }
     },
     computed: {
-       
+
     },
     unmounted() { },
 }

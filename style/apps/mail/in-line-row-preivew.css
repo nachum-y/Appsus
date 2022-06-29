@@ -1,0 +1,62 @@
+.mail-preview-in-row {
+    border: 1px solid #dadce0 ;
+    border-bottom: 1px inset #dadce0;
+    padding: 0 4rem;
+    box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 0px 0px 0 rgb(60 64 67 / 30%), 0 0px 0px -1px rgb(60 64 67 / 15%);
+}
+
+.sender-with-avatar>*,
+.sender-with-avatar {
+    display: flex;
+    align-items: center;
+    
+}
+
+.avatar-in-preview {
+    margin-inline-end: 1rem;
+}
+
+.sender-details {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.sender-name-and-mail>*,
+.sender-name-and-mail {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin-bottom: 0.25rem;
+
+}
+
+.sender-name-in-preview {
+    font-weight: 700;
+    font-size: 0.875rem;
+    margin-inline-end: 0.5rem;
+}
+
+.sender-mail-in-preview {
+    font-size: 0.75rem;
+    font-weight: 500;
+
+}
+
+
+
+.top-mail-privew {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 3.5rem;
+}
+
+.actions-mail-privew>:not(:last-child) {
+    margin-inline-end: 1em;
+}
+
+.body-in-preview{
+    margin: 1rem  3.5rem;
+    padding-top: 1rem;
+}
