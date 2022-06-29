@@ -7,13 +7,8 @@
 @import 'basic/helpers.css';
 @import 'basic/layout.css';
 
-/* @import 'basic/buttons.css'; */
-/* @import 'basic/logos.css';  */
-
-
 /* CMPS */
 @import 'cmps/app-home.css';
-@import 'cmps/app-about.css';
 @import 'cmps/user-msg.css';
 
 /* APPS */
