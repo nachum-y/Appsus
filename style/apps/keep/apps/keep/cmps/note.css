@@ -3,6 +3,8 @@
     width: 400px;
     min-height: 200px;
     padding: 1em;
+    display: flex;
+    flex-direction: column;
 }
 
 .note img{
