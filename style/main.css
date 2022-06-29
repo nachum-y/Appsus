@@ -15,5 +15,10 @@
 @import 'apps/keep/main.css';
 @import 'apps/mail/main.css';
 
+/* mail */
+@import 'apps/mail/side-nav.css';
+@import 'apps/mail/mail-list.css';
+@import 'apps/mail/mail-layout.css';
+
 /* Media Queries */
 @import 'mq/mq.css';

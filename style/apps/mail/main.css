@@ -1,0 +1,47 @@
+.main-header-mail-app {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    box-shadow: inset 0px -1px 0px #EDEFF1;
+    margin-bottom: 16px;
+}
+
+.main-header-mail-app>* {
+    display: flex;
+    align-items: center;
+}
+
+.left-side>:not(:last-child),
+.right-side>:not(:last-child) {
+    margin-inline-end: 16px;
+}
+
+.left-side {
+    margin-inline-end: 72px;
+}
+
+.center {
+    width: 100%;
+}
+
+.search-mail {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 70%;
+}
+
+#search-mail{
+    width: 100%;
+    padding: 1em;
+    padding-inline-start: 4em;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(241, 243, 244, 1);
+}
+.search-mail .search-icon-header {
+    position: absolute;
+    left: 1em;
+    top: 0.5em;
+}
