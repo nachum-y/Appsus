@@ -1,0 +1,18 @@
+:root {
+    /* main app colors google */
+    --yellow: #F2BE42;
+    --green: #58A55C;
+    --red: #D95140;
+    --blue: #5186EC;
+
+    /* Primary Texr Colors  */
+    --ptxt1: #202124;
+    --ptxt2: rgba(0, 0, 0, 0.54);
+   
+    /* Primary Texr Colors DARKMODE  */
+
+    
+    --s: 600px;
+    --m: 890px;
+    --w: 1060px;
+}
