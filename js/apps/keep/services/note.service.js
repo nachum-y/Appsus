@@ -6,7 +6,8 @@ import { utilService } from '../../../services/util-service.js'
 import {storageService} from '../../../services/async-storage-service.js'
 
 export const noteService = {
-    query
+    query,
+    addNewNote
 }
 const NOTES_KEY = 'NOTES_DB'
 
@@ -52,4 +53,24 @@ function query() {
     return storageService.query(NOTES_KEY)
   }
 
+function addNewNote(note){
+    const newNote = {type: note.type, info: _prepareNoteInfo(note)}
+    return storageService.post(NOTES_KEY, newNote)
+}
 
+function _prepareNoteInfo(note) {
+    const {type, data} = note
+    switch (type) {
+        case 'note-txt':
+            return  {txt: data }
+        case 'note-img':
+            return  {url: data, title: "My Special Image"}
+        case 'note-todos':
+            let todos = []
+            data.split(',').map(txt => {
+                let todo = {txt, doneAt: null}
+                todos.push(todo)
+            })
+            return {label: "Get my stuff together", todos}
+    }
+}

@@ -1,8 +1,7 @@
 .note{
     background-color: var(--blue);
-    max-width: 400px;
+    width: 400px;
     min-height: 200px;
-    margin-block-end: 1em;
     padding: 1em;
 }
 

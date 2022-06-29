@@ -2,15 +2,18 @@
 // This component renders the <note-preview> component that allow viewing the notes preview, and also changing color, pin, etc.
 import { noteService } from "../services/note.service.js"
 import noteList from "../cmps/note-list.cmp.js"
+import noteAdd from "../cmps/note-add.cmp.js"
 
 export default{
     template: ` 
         <section v-if="notes" class="note-app">
+            <note-add @newNote="addNote"/>
             <note-list :notes="notesToShow"/>
         </section>
     `,
     components:{
         noteList,
+        noteAdd
     },
     data() {
         return {
@@ -23,6 +26,13 @@ export default{
             this.notes = notes
         })
 
+    },
+    methods: {
+        addNote(note){
+            noteService.addNewNote(note).then(note => {
+                this.notes.unshift(note)
+            })
+        }
     },
     computed: {
         notesToShow() {
