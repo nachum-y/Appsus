@@ -2,18 +2,27 @@
 // Here is an array of some notes:
 
 // TODO: There are several types of notes, start with implementing:
+import { utilService } from '../../../services/util-service.js'
+import {storageService} from '../../../services/async-storage-service.js'
 
-const notes = [ 
+export const noteService = {
+    query
+}
+const NOTES_KEY = 'NOTES_DB'
+
+const gNotes = [ 
     { id: "n101", 
     type: "note-txt", 
-    isPinned: true, info: { 
+    isPinned: true, 
+    info: { 
         txt: "Fullstack Me Baby!" 
     } 
 },
 {   id: "n102", 
     type: "note-img",
-    info: { url: "http://some-img/me", 
-    title: "Bobi and Me" }, 
+    info: { 
+        url: "https://media.giphy.com/media/jUwpNzg9IcyrK/giphy.gif", 
+        title: "homer simpson" }, 
     style: { 
         backgroundColor: "#00d" 
     } 
@@ -28,4 +37,19 @@ const notes = [
         ] 
     } 
 }]
+
+
+_createNotes()
+function _createNotes() {
+    let notes = utilService.loadFromStorage(NOTES_KEY)
+    if (!notes || !notes.length || notes === 'undifined') {
+      utilService.saveToStorage(NOTES_KEY, gNotes)
+    }
+    return notes
+  }
+
+function query() {
+    return storageService.query(NOTES_KEY)
+  }
+
 

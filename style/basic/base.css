@@ -6,6 +6,13 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+<<<<<<< HEAD
     overflow-x: hidden;
 
+=======
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+>>>>>>> fd3317dd92473de3f30c02dcc18eab77759f4ce3
 }
