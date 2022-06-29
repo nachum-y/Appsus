@@ -7,7 +7,7 @@ import emailListInRowPrivew from './email-list-in-row-privew.cmp.js'
 
 export default {
     template: `
-    <section v-if="mails">
+    <section  class="mail-list" v-if="mails">
       <div v-for="mail in mails" :key="mail.id">
             <email-list-row-privew :mail="mail" @click="showMailToggle(mail)" />
             <email-list-in-row-privew v-if="showMail === mail" :mail="showMail"/>

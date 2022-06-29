@@ -5,9 +5,8 @@
 
 .mail-list{
     width: 100%;
-    /* margin: 16px; */
 }
 
 .side-nav{
-    width: 248px;
+    min-width: 14.5rem;
 }

@@ -6,8 +6,8 @@ import sideNav from '../cmps/side-nav.cmp.js'
 export default {
     template: `
     <section class="main-email-app">
-        <side-nav class="side-nav"/>
-        <email-list class="mail-list"/> 
+        <side-nav />
+        <email-list/> 
     </section>
 `,
     components: {

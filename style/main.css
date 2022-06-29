@@ -17,6 +17,7 @@
 
 /* mail */
 @import 'apps/mail/side-nav.css';
+@import 'apps/mail/side-nav-tabs.css';
 @import 'apps/mail/mail-list.css';
 @import 'apps/mail/mail-layout.css';
 @import 'apps/mail/in-line-row-preivew.css';
