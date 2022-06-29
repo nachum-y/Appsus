@@ -34,7 +34,8 @@ export default{
             })
         },
         removeNote(noteId){
-            noteService.removeNoteById(noteId).then((idx)=>{
+            noteService.removeNoteById(noteId).then(()=>{
+                const idx = this.notes.findIndex(note => note.id === noteId)
                 this.notes.splice(idx,1)
                 
             })
