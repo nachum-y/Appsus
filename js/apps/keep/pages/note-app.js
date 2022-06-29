@@ -8,7 +8,7 @@ export default{
     template: ` 
         <section v-if="notes" class="note-app">
             <note-add @newNote="addNote"/>
-            <note-list :notes="notesToShow"/>
+            <note-list :notes="notesToShow" @removeNote="removeNote"/>
         </section>
     `,
     components:{
@@ -31,6 +31,12 @@ export default{
         addNote(note){
             noteService.addNewNote(note).then(note => {
                 this.notes.unshift(note)
+            })
+        },
+        removeNote(noteId){
+            noteService.removeNoteById(noteId).then((idx)=>{
+                this.notes.splice(idx,1)
+                
             })
         }
     },

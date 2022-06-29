@@ -7,6 +7,7 @@ export default{
 
             <div v-for="(note,idx) in notes" :key="note.id" :class="note.type" class="note" >
                 <note-preview :note="note"/>
+                <div class="actions"><span class="remove-btn" @click="remove(note.id)">remove</span></div>
             </div>
 
     </section>
@@ -18,7 +19,9 @@ export default{
         return {}
     },
     methods: {
-       
+       remove(noteId){
+            this.$emit('removeNote', noteId)
+        }
     },
     computed: {},
 }
