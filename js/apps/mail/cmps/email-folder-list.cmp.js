@@ -1,0 +1,1 @@
+//Allow filtering by different folders: inbox / sent / trash/ draft

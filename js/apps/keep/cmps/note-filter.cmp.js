@@ -1,0 +1,1 @@
+// Support filtering notes by search and by type
