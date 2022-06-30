@@ -3,17 +3,20 @@
 import { noteService } from "../services/note.service.js"
 import noteList from "../cmps/note-list.cmp.js"
 import noteAdd from "../cmps/note-add.cmp.js"
+import noteDetails from "./note-details.cmp.js"
 
 export default{
     template: ` 
         <section v-if="notes" class="note-app">
+            <router-view/>
             <note-add @newNote="addNote"/>
             <note-list :notes="notesToShow" @removeNote="removeNote" @copyNote="copyNote" @togglepin="togglepin"/>
         </section>
     `,
     components:{
         noteList,
-        noteAdd
+        noteAdd,
+        noteDetails
     },
     data() {
         return {

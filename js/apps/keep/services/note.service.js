@@ -10,7 +10,8 @@ export const noteService = {
     addNewNote,
     removeNoteById,
     copyNote,
-    togglepin
+    togglepin,
+    get
 }
 const NOTES_KEY = 'NOTES_DB'
 
@@ -71,6 +72,11 @@ function _createNotes() {
     }
     return notes
   }
+
+  function get(noteId) {
+    return storageService.get(NOTES_KEY, noteId)
+  }
+  
 
 function query() {
     return storageService.query(NOTES_KEY)

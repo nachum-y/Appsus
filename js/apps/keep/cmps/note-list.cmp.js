@@ -8,10 +8,13 @@ export default{
         <div class="note-list-holder">
             <h2>pinned</h2>
             <div class="note-list">
-                <div v-for="(note,idx) in pinnedNotes" :key="note.id" :class="note.type" class="note defult-text" >
-                        <div class="note-content">
-                            <note-preview :note="note"/>
-                        </div>
+                <div v-for="(note,idx) in pinnedNotes" :key="note.id" :class="note.type" class="note defult-text" @click="">
+
+                        <router-link :to="'/keep/'+note.id">
+                            <div class="note-content"><note-preview :note="note"/></div>
+                        </router-link>
+                           
+
                     <div class="pin-btn action-btn" @click="togglepin(note)"><icons name="pinned" color="#777" /></div>
                     <div class="actions">
                         <span class="action-btn remove-btn" @click="remove(note.id)"><icons name="remove" color="#777" /></span>
