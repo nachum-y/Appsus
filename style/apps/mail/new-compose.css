@@ -40,8 +40,21 @@
     font-size: 0.875rem;
 }
 
-.compose-budy {
+.compose-body {
     flex-grow: 2;
+    overflow-y: scroll;
+    margin: 1rem;
+}
+.compose-body:focus{
+    outline: none;
+}
+.compose-body::-webkit-scrollbar {
+    width:0.1rem;
+    background: #fff;
+}
+
+input:focus{
+    outline: none;
 }
 
 .actions-bottom {
