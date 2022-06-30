@@ -8,18 +8,26 @@ export default {
     <section class="main-email-app">
         <side-nav />
         <email-list/> 
-        <router-view></router-view>
+        <router-view :saveC="saveC"></router-view>
     </section>
 `,
     components: {
         emailList,
-        sideNav
+        sideNav,
     },
     data() {
-        return {}
+        return {
+            mails: null,
+        }
     },
     created() { },
-    methods: {},
-    computed: {},
+    methods: {
+        
+    },
+    computed: {
+        saveC(){
+            console.log('save');
+        }
+    },
     unmounted() { },
 }

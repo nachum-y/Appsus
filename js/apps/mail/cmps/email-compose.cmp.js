@@ -1,16 +1,18 @@
 // Has a form with: to, subject and body
 // Use the service to send an email (add email to the list)
+import { eventBus } from '../../../services/eventBus-service.js'
 import svgIcons from './svg-icons.cmp.js'
 
 export default {
+    props: ['showCompose'],
     template: `
-    <form @submit.prevent="save" class="new-compose">
+    <form  v-if="openCompose" @submit.prevent="save" class="new-compose">
         <div class="compose-header">
             <span class="new-message-compose-header">New Message</span>
             <div class="actions-compuse-header">
                 <span><svg-icons name="minimuze"/></span>
                 <span><svg-icons name="openIn"/></span>
-                <span><svg-icons name="close"/></span>
+                <span @click="closeCompose"><svg-icons name="close"/></span>
             </div>
         </div>
         <label for="input-recipients">
@@ -19,7 +21,7 @@ export default {
         <label for="input-subject">
             <input type="text" class="input-subject" id="input-subject" placeholder="Subject">
         </label>
-        <div @input="onInput" contenteditable="true" class="compose-body">
+        <div @input="onInput" contenteditable="true"   class="compose-body">
             
         </div>
         <div class="actions-bottom">
@@ -40,22 +42,38 @@ export default {
 `,
     data() {
         return {
-            text: ''
+            text: '',
+            openCompose: null,
         }
     },
     components: {
         svgIcons
     },
-    created() { },
+    created() {
+    },
     methods: {
         save() {
+            console.log('save in component compose')
             this.$emit('saveC', 'save')
+            eventBus.emit('sendMail', this.text)
+
         },
         onInput(e) {
-            console.log(e.target.innerText)
-            this.text = e.target.innerText
+
+            this.text = e.target.innerHTML
+
+        },
+        closeCompose() {
+            this.openCompose = false
+            // this.$router.back()
+            this.$router.replace({ path: '/mail' })
+
+
         }
     },
     computed: {},
+    mounted() {
+        this.openCompose = this.showCompose
+    },
     unmounted() { },
 }
