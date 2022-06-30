@@ -68,4 +68,12 @@ export default{
         notePreview,
         icons
     },
+    watch: {
+        notes: {
+            handler() {
+                this.devideNotes()
+            },
+            deep: true
+        }
+    }
 }
