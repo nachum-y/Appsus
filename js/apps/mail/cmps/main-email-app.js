@@ -8,6 +8,7 @@ export default {
     <section class="main-email-app">
         <side-nav />
         <email-list/> 
+        <router-view></router-view>
     </section>
 `,
     components: {

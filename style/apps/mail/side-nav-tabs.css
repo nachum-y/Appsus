@@ -1,39 +1,21 @@
 .side-nav-tabs svg{
-    display: flex-inline;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     margin-inline-end: 1rem;
 }
 
-.side-nav-tab1s>*{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 4px 16px 4px 8px;
-    gap: 16px;
-    
-    width: 232px;
-    height: 32px;
-    
-    background: #F9E9E7;
-    border-radius: 0px 32px 32px 0px;
-    
-    /* Inside auto layout */
-    
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-}
+
 
 .side-nav-tabs>*{
 display: flex;
 align-items: center;
 justify-content: space-between;
-
+cursor: pointer;
 padding: 0.25rem 1rem 0.25rem 0.5rem;
 gap: 1rem;
 
-width: 14.5rem;
+width: 13.5rem;
 height: 2rem;
 font-size: 0.875rem;
 

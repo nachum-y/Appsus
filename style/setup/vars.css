@@ -4,16 +4,19 @@
     --green: #58A55C;
     --red: #D95140;
     --darkRed: #C84031;
-    --lightRed: rgba(249, 233, 231, 1)    ;
+    --lightRed: rgba(249, 233, 231, 1);
     --blue: #5186EC;
 
     /* Primary Texr Colors  */
     --ptxt1: #202124;
     --ptxt2: rgba(0, 0, 0, 0.54);
-   
+
+    /* BTN */
+    --bPBlue: #1A73E8;
+
     /* Primary Texr Colors DARKMODE  */
 
-    
+
     --s: 600px;
     --m: 890px;
     --w: 1060px;

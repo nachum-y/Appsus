@@ -60,3 +60,11 @@
     margin: 1rem  3.5rem;
     padding-top: 1rem;
 }
+
+.show-mail-open{
+    /* border: 1px solid #dadce0; */
+    /* border-bottom: 1px inset #dadce0; */
+    border-bottom: none;
+    background-color: rgba(0, 0, 0, 0.04);
+    box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 0px 0px 0 rgb(60 64 67 / 30%), 0 0px 0px -1px rgb(60 64 67 / 15%);
+}

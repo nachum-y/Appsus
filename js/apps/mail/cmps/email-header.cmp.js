@@ -1,4 +1,6 @@
 import svgIcons from './svg-icons.cmp.js'
+import { eventBus } from '../../../services/eventBus-service.js';
+
 export default {
     template: `
     <header class="main-header-mail-app">

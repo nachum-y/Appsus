@@ -21,6 +21,7 @@
 @import 'apps/mail/mail-list.css';
 @import 'apps/mail/mail-layout.css';
 @import 'apps/mail/in-line-row-preivew.css';
+@import 'apps/mail/new-compose.css';
 
 /* Media Queries */
 @import 'mq/mq.css';
