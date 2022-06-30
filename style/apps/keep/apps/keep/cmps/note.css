@@ -1,5 +1,5 @@
 .note{
-    width: 400px;
+    width: 240px;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     min-height: 200px;
@@ -7,6 +7,8 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    break-inside: avoid-column; 
+    margin-block-end: 1rem;
 }
 
 .note img{
@@ -17,4 +19,10 @@
 .note .actions{
     position: absolute;
     bottom: 0.5em;
+}
+
+@media (max-width: 600px) {
+    .note{
+        width: 28.125rem;
+      }
 }

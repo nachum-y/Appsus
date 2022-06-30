@@ -8,12 +8,13 @@ import {storageService} from '../../../services/async-storage-service.js'
 export const noteService = {
     query,
     addNewNote,
-    removeNoteById
+    removeNoteById,
+    copyNote
 }
 const NOTES_KEY = 'NOTES_DB'
 
 const gNotes = [ 
-    { id: "n101", 
+{   id: "n101", 
     type: "note-txt", 
     isPinned: true, 
     info: { 
@@ -37,8 +38,28 @@ const gNotes = [
             { txt: "Driving liscence", doneAt: null }, 
             { txt: "Coding power", doneAt: 187111111 } 
         ] 
+    }
+},
+{   id: "n104", 
+    type: "note-img",
+    info: { 
+        url: "https://media.giphy.com/media/egHTZeNZpuP1ep4C5f/giphy.gif", 
+        title: "Bye Kanye" }, 
+},
+{   id: "n105", 
+    type: "note-txt", 
+    isPinned: true, 
+    info: { 
+        txt: ["Hell On keys"] 
     } 
-}]
+},
+{   id: "n106", 
+    type: "note-img",
+    info: { 
+        url: "https://media.giphy.com/media/zMCfqXkwjmTO8/giphy.gif", 
+        title: "What is Happiness" }, 
+},
+]
 
 
 _createNotes()
@@ -61,6 +82,11 @@ function removeNoteById(noteId) {
 function addNewNote(note){
     const newNote = {type: note.type, info: _prepareNoteInfo(note)}
     return storageService.post(NOTES_KEY, newNote)
+}
+
+function copyNote(note) {
+    const {type, info} = note 
+    return storageService.post(NOTES_KEY, {type, info})
 }
 
 function _prepareNoteInfo(note) {

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
-
+.add-note{
+ min-height: 7rem;
+ display: flex;
+ justify-content: center;
+}
 .add-note-box{
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
     background-color: #fff;
@@ -9,9 +13,9 @@
     line-height: 1.1875rem;
     min-height: 1rem;
     padding: 0.8rem 1rem;
-        width: 37.5rem;
+    width: 37.5rem;
     border-radius: 0.5rem;
-    margin: 2rem auto 1rem auto;
+    margin: auto;
     position: relative;
 }
 
@@ -60,7 +64,8 @@
     outline: none !important;
 }
 
-/* .icon-add{
-    fill: #202124;
-
-} */
+@media (max-width: 600px) {
+    .add-note-box {
+        width: 28.125rem;
+    }
+}

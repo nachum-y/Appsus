@@ -8,7 +8,7 @@ export default{
     template: ` 
         <section v-if="notes" class="note-app">
             <note-add @newNote="addNote"/>
-            <note-list :notes="notesToShow" @removeNote="removeNote"/>
+            <note-list :notes="notesToShow" @removeNote="removeNote" @copyNote="copyNote"/>
         </section>
     `,
     components:{
@@ -38,6 +38,11 @@ export default{
                 const idx = this.notes.findIndex(note => note.id === noteId)
                 this.notes.splice(idx,1)
                 
+            })
+        },
+        copyNote(note){
+            noteService.copyNote(note).then(note => {
+                this.notes.unshift(note)
             })
         }
     },

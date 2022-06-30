@@ -1,7 +1,38 @@
+.notes-container{
+ display: flex;
+ justify-content: center;
+}
+
 .note-list{
-    display: flex;
-    gap: 1em;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center
+  columns: 4;
+  column-gap: 1rem;
+}
+
+.note-list .actions{
+ display: flex;
+ align-items: flex-start;
+}
+
+@media (max-width: 1050px) {
+  .note-list{
+      columns: 3;
+      column-gap: 1rem;
+      margin: 0 2rem ;
+    }
+}
+
+@media (max-width: 790px) {
+    .note-list{
+        columns: 2;
+        column-gap: 1rem;
+        margin: 0 2rem ;
+      }
+}
+
+@media (max-width: 600px) {
+    .note-list{
+        columns: 1;
+        column-gap: 1rem;
+        margin: 0 2rem ;
+      }
 }

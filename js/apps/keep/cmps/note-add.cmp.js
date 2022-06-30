@@ -1,7 +1,6 @@
 import icons from "./icons.cmp.js"
 export default {
     template:`
-
         <div @click.self.prevent="add" class="add-note defult-text">
             <div class="add-note-box">
                 <div class="take-a-note" v-on:input="setData" contenteditable="true" spellcheck="false">{{setPlaceholderMsg}}</div>
@@ -19,19 +18,21 @@ export default {
             note: {
                 type: 'note-txt',
                 data: '',
-                content: ''
-            }
+            },
+            eltextbox: null,
         }
     },
     methods: {
         add(){
             if(!this.note.data) return
             this.$emit('newNote', this.note)
+            this.eltextbox.target.innerText = 'Anything else...'
         },
         setType(type){
             this.note.type = type
         },
         setData(ev){
+            this.eltextbox = ev
             this.note.data = ev.target.innerText
         }
     },
