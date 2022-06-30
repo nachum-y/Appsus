@@ -19,17 +19,18 @@ export default {
         <label for="input-subject">
             <input type="text" class="input-subject" id="input-subject" placeholder="Subject">
         </label>
-        <div class="compose-budy">
+        <div @input="onInput" contenteditable="true" class="compose-body">
             
         </div>
         <div class="actions-bottom">
-                <button class="send-mail-compose">Send</button>
+                <button type="submit" class="send-mail-compose">Send</button>
             <div class="list-of-text-actions">
                 <span><span><svg-icons name="textFormat"/></span></span>
                 <span><span><svg-icons name="attachFile"/></span></span>
                 <span><span><svg-icons name="emoji"/></span></span>
                 <span><span><svg-icons name="image"/></span></span>
             </div>
+          
             <div class="compose-actions">
                 <span>±</span>
                 <span><span><svg-icons name="draft"/></span></span>
@@ -38,7 +39,9 @@ export default {
     </form>
 `,
     data() {
-        return {}
+        return {
+            text: ''
+        }
     },
     components: {
         svgIcons
@@ -46,7 +49,11 @@ export default {
     created() { },
     methods: {
         save() {
-            console.log('hello')
+            this.$emit('saveC', 'save')
+        },
+        onInput(e) {
+            console.log(e.target.innerText)
+            this.text = e.target.innerText
         }
     },
     computed: {},

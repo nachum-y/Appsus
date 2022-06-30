@@ -3,7 +3,7 @@ import sideNavTabs from './side-nav-tabs.cmp.js'
 export default {
     template: `
     <section class="side-nav">
-        <span class="compuse">
+        <span @click="newCompose" class="compuse">
             <svg-icons name="sideNavCompose"/>
         </span>
         <side-nav-tabs/>
@@ -17,7 +17,11 @@ export default {
         sideNavTabs
     },
     created() { },
-    methods: {},
+    methods: {
+        newCompose(){
+            
+        }
+    },
     computed: {},
     unmounted() { },
 }
