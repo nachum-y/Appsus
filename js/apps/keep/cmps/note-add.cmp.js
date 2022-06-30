@@ -1,17 +1,16 @@
 import icons from "./icons.cmp.js"
 export default {
     template:`
-        <div @click.self.prevent="add" class="add-note defult-text">
+        <div class="add-note defult-text">
             <div class="add-note-box">
-                <div class="take-a-note" v-on:input="setData" contenteditable="true" spellcheck="false">{{setPlaceholderMsg}}</div>
+                <div @focusout="add" @click="clear" class="take-a-note" v-on:input="setData" contenteditable="true" spellcheck="false">{{placeholder}}</div>
                    <div class="add-note-actions">
                         <span @click="setType('note-txt')"><icons name="txt" color="#777777"/></span>
                         <span @click="setType('note-img')"><icons name="img" color="#777777"/></span>
                         <span @click="setType('note-todos')"><icons name="list" color="#777777"/></span>
                    </div>
             </div>
-
-            </div>
+        </div>
     `,
     data() {
         return {
@@ -20,37 +19,58 @@ export default {
                 data: '',
             },
             eltextbox: null,
+            placeholder: `What's on your mind?`
         }
     },
     methods: {
         add(){
-            if(!this.note.data) return
+            if(!this.note.data){
+                this.setType('note-txt')
+                this.setPlaceholder()
+                return
+            } 
             this.$emit('newNote', this.note)
-            this.eltextbox.target.innerText = 'Anything else...'
+            this.eltextbox.target.innerText = ''
+            this.clear()
+            this.setPlaceholder()
+            
         },
         setType(type){
             this.note.type = type
         },
+        setPlaceholder(){
+            const type = this.note.type
+            switch (type) {
+                case 'note-img':
+                    this.placeholder =  `Enter img URL`
+                    break
+                case 'note-todos':
+                    this.placeholder = `Enter comma separated list`
+                    break
+                default:
+                    this.placeholder = `What's on your mind?`
+                    break
+            }
+        },
         setData(ev){
             this.eltextbox = ev
             this.note.data = ev.target.innerText
-        }
+        },
+        clear(){
+         this.setType('note-txt')
+         this.note.data = ''
+         this.placeholder = ''
+        },
     },
     computed:{
-        setPlaceholderMsg(){
-            const {type} = this.note
-            switch (type) {
-                case 'note-img':
-                    return `Enter img URL`
-                case 'note-todos':
-                    return `Enter comma separated list`
-                default:
-                    return `What's on your mind?`
-            }
+        setColor(){
+            
         },
     },
     components: {
         icons,
     }
+    
 
 }
+
