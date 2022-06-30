@@ -1,6 +1,7 @@
 import homePage from "./pages/app-home.cmp.js"
 import emailApp from "./apps/mail/pages/email-app.js"
 import noteApp from "./apps/keep/pages/note-app.js"
+import emailCompose from "./apps/mail/cmps/email-compose.cmp.js"
 
 const routes = [
     {
@@ -9,7 +10,15 @@ const routes = [
     },
     {
         path: '/mail',
-        component: emailApp
+        component: emailApp,
+        children: [
+            {
+              // UserProfile will be rendered inside User's <router-view>
+              // when /user/:id/profile is matched
+              path: 'compose=new',
+              component: emailCompose,
+            },
+        ]
     },
     {
         path: '/keep',

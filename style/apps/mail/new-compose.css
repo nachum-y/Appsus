@@ -1,0 +1,80 @@
+.new-compose {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    bottom: 0;
+    right: 1rem;
+    height: 37.5rem;
+    width: 37.5rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.compose-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #424242;
+    color: #fff;
+    padding: 0.625rem 1rem;
+    border-radius: 8px 8px 0px 0px;
+
+}
+
+
+
+.actions-compuse-header>:not(:last-child) {
+    margin-inline-end: 0.5rem;
+}
+
+.new-compose input {
+    padding: 0.5rem 0;
+    margin: 0 0.5rem;
+    border: none;
+    border-bottom: #EDEFF1 1px solid;
+    width: 98%;
+
+}
+
+.new-compose input::placeholder {
+    color: var(--ptxt2);
+    font-size: 0.875rem;
+}
+
+.compose-budy {
+    flex-grow: 2;
+}
+
+.actions-bottom {
+    display: flex;
+    margin: 1rem;
+
+}
+
+.send-mail-compose{
+    padding: 0.5rem 1.875rem 0.5rem 1rem;
+    font-size: .875rem;
+    color: #fff;
+    background-color: var(--bPBlue);
+    border: none;
+    border-radius: 4px;
+    margin-inline-end: 1.5rem;
+}
+
+.list-of-text-actions>*{
+    align-self: center;
+    margin-inline-end: 1.5rem;
+}
+.list-of-text-actions{
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+}
+
+
+.compose-actions{
+    display: flex;
+    align-items: center;
+}
+.compose-actions>:not(:last-child){
+    margin-inline-end: 1.5rem;
+}
