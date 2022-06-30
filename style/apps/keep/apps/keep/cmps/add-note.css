@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+.add-note-box{
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    color: #202124;
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
+    min-height: 1rem;
+    padding: 0.8rem 1rem;
+        width: 37.5rem;
+    border-radius: 0.5rem;
+    margin: 2rem auto 1rem auto;
+    position: relative;
+}
+
+.add-note-actions{
+    display: flex;
+    position: absolute;
+    top: 0.4rem;
+    right: 1em;
+}
+
+.add-note-actions span{
+    margin-inline-end: 1em;
+    background-color:rgba(95,99,104,0);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: background-color 0.235s;
+}
+
+.add-note-actions span:hover{
+    background-color:rgba(95,99,104,0.157);
+    
+}
+
+.add-note-actions span svg{
+    fill: #7777;
+}
+
+.add-note-actions span svg:hover{
+    fill: black;
+}
+
+.take-a-note{
+    letter-spacing: .00625em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    height: 100%;
+    color: rgba(0,0,0,0.702);
+}
+
+.take-a-note:focus{
+    outline: none !important;
+}
+
+/* .icon-add{
+    fill: #202124;
+
+} */

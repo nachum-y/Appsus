@@ -1,27 +1,38 @@
+import icons from "./icons.cmp.js"
 export default {
     template:`
-        <form @submit.prevent="add" class="add-note">
-            <input v-model="note.data" type="text" :placeholder="setPlaceholderMsg">
-                <li @click="setType('note-txt')">text</li>
-                <li @click="setType('note-img')">Img</li>
-                <li @click="setType('note-todos')">List</li>
-            <pre>{{note}}</pre>
-        </form>
+
+        <div @click.self.prevent="add" class="add-note defult-text">
+            <div class="add-note-box">
+                <div class="take-a-note" v-on:input="setData" contenteditable="true" spellcheck="false">{{setPlaceholderMsg}}</div>
+                   <div class="add-note-actions">
+                        <span @click="setType('note-txt')"><icons name="txt" color="#777777"/></span>
+                        <span @click="setType('note-img')"><icons name="img" color="#777777"/></span>
+                        <span @click="setType('note-todos')"><icons name="list" color="#777777"/></span>
+                   </div>
+            </div>
+
+            </div>
     `,
     data() {
         return {
             note: {
                 type: 'note-txt',
-                data: ''
+                data: '',
+                content: ''
             }
         }
     },
     methods: {
         add(){
+            if(!this.note.data) return
             this.$emit('newNote', this.note)
         },
         setType(type){
             this.note.type = type
+        },
+        setData(ev){
+            this.note.data = ev.target.innerText
         }
     },
     computed:{
@@ -36,6 +47,9 @@ export default {
                     return `What's on your mind?`
             }
         },
+    },
+    components: {
+        icons,
     }
 
 }

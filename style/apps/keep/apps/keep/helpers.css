@@ -1,0 +1,33 @@
+.note-app .defult-text{
+    letter-spacing: .01428571em;
+    font-family: Roboto,Arial,sans-serif;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+}
+
+
+.action-btn{
+    margin-inline-end: 1em;
+    background-color:rgba(95,99,104,0);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    transition: background-color 0.235s;
+}
+
+.action-btn:hover{
+    background-color:rgba(95,99,104,0.157);
+    
+}
+
+.action-btn svg{
+    fill: #7777;
+}
+
+.action-btn svg:hover{
+    fill: black;
+}

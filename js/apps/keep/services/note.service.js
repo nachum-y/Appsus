@@ -17,7 +17,7 @@ const gNotes = [
     type: "note-txt", 
     isPinned: true, 
     info: { 
-        txt: "Fullstack Me Baby!" 
+        txt: ["Fullstack Me Baby!"] 
     } 
 },
 {   id: "n102", 
@@ -67,7 +67,7 @@ function _prepareNoteInfo(note) {
     const {type, data} = note
     switch (type) {
         case 'note-txt':
-            return  {txt: data }
+        return {txt: data.split('\n')}
         case 'note-img':
             return  {url: data, title: "My Special Image"}
         case 'note-todos':

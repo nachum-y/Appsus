@@ -1,3 +1,8 @@
 /* COMPONANTS */
+@import 'apps/keep/cmps/add-note.css';
 @import 'apps/keep/cmps/note-list.css';
 @import 'apps/keep/cmps/note.css';
+
+
+/* Helpers */
+@import 'apps/keep/helpers.css'
