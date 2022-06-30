@@ -1,27 +1,36 @@
 import svgIcons from './svg-icons.cmp.js'
 import sideNavTabs from './side-nav-tabs.cmp.js'
 export default {
+    name: 'side',
+    props:['mails','unReadMails'],
     template: `
     <section class="side-nav">
-        <span @click="newCompose" class="compuse">
+        <span @click="newCompose"  class="compuse">
             <svg-icons name="sideNavCompose"/>
         </span>
-        <side-nav-tabs/>
+        <side-nav-tabs :unReadMails="unReadMails"/>
     </section>
 `,
     data() {
         return {}
     },
-    components:{
+    components: {
         svgIcons,
-        sideNavTabs
+        sideNavTabs,
     },
-    created() { },
+    created() { 
+        console.log(this.unReadMails);
+    },
     methods: {
-        newCompose(){
-            
+        newCompose() {
+            console.log('newCompose() called');
+            this.$router.push({ name: 'newCompose', params: { showCopose: true} })
+
+            // router.push('+/compose=new')
         }
     },
     computed: {},
-    unmounted() { },
+    mounted() {
+        console.log(this.mails);
+     },
 }

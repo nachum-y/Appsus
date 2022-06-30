@@ -1,7 +1,14 @@
 // Model - start with a basic model of emails
-export const emailService = {
+import { utilService } from '../../../services/util-service.js'
+import {storageService} from '../../../services/async-storage-service.js'
+export const mailService = {
     getAllMails,
+    query,
+    removeMailById,
+    
 }
+const MAILS_KEY = 'mailsDB'
+
 
 const email = {
     id: 'e101',
@@ -66,3 +73,29 @@ function getAllMails() {
     ]
     return mails
 }
+
+
+
+_createNotes()
+function _createNotes() {
+    const gMails = getAllMails()
+    let mails = utilService.loadFromStorage(MAILS_KEY)
+    if (!mails || !mails.length || mails === 'undifined') {
+      utilService.saveToStorage(MAILS_KEY, gMails)
+    }
+    return mails
+  }
+
+function query() {
+    return storageService.query(MAILS_KEY)
+  }
+
+function removeMailById(mailId) {
+    return storageService.remove(MAILS_KEY,mailId)
+}
+
+function addNewMail(mail){
+    const newMail = {type: note.type, info: _prepareNoteInfo(note)}
+    return storageService.post(MAILS_KEY, newNote)
+}
+

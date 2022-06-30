@@ -13,10 +13,12 @@ const routes = [
         component: emailApp,
         children: [
             {
-              // UserProfile will be rendered inside User's <router-view>
-              // when /user/:id/profile is matched
-              path: 'compose=new',
-              component: emailCompose,
+                // UserProfile will be rendered inside User's <router-view>
+                // when /user/:id/profile is matched
+                name: 'newCompose',
+                path: 'compose=new',
+                component: emailCompose,
+                props: { showCompose: true }
             },
         ]
     },

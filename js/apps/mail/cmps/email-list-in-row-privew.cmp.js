@@ -11,7 +11,7 @@ export default {
             <h2 class="mail-preview-subject">{{mail.subject}}</h2>
             <div class="actions-mail-privew">
                 <span><svg-icons name="openInNewWindow"/></span>
-                <span><svg-icons name="draft"/></span>  </div>
+                <span @click="$emit('RemoveMail',mail)"><svg-icons name="draft"/></span>  </div>
         </div>
 
 
@@ -39,4 +39,10 @@ export default {
     components: {
         svgIcons,
     },
+    methods: {
+        removeMail(mail) {
+            this.$emit('removeMail', mail)
+            console.log('removeMail called', mail)
+        }
+    }
 }
