@@ -21,6 +21,14 @@
     bottom: 0.5em;
 }
 
+.action-btn.pin-btn{
+    position: absolute;
+    right: 0.5em;
+    top:0.5em;
+    width: 2.5em;
+    height: 2.5em;
+}
+
 @media (max-width: 600px) {
     .note{
         width: 28.125rem;

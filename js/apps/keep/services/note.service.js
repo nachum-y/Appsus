@@ -9,14 +9,15 @@ export const noteService = {
     query,
     addNewNote,
     removeNoteById,
-    copyNote
+    copyNote,
+    togglepin
 }
 const NOTES_KEY = 'NOTES_DB'
 
 const gNotes = [ 
 {   id: "n101", 
     type: "note-txt", 
-    isPinned: true, 
+    c: true, 
     info: { 
         txt: ["Fullstack Me Baby!"] 
     } 
@@ -87,6 +88,17 @@ function addNewNote(note){
 function copyNote(note) {
     const {type, info} = note 
     return storageService.post(NOTES_KEY, {type, info})
+}
+
+function togglepin(note){
+    
+    if (note.isPinned === undefined){
+        note.isPinned = true
+    } else {
+        note.isPinned = !note.isPinned
+    }
+    return storageService.put(NOTES_KEY, note)
+
 }
 
 function _prepareNoteInfo(note) {
