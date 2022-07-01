@@ -15,6 +15,21 @@
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
 }
 
+.screen .actions {
+    
+}
+
+.note.details .actions{
+    display: flex;
+    position: absolute;
+    bottom: 0.5em;
+    opacity: 1;
+}
+
+.note.details .pin-btn{
+    opacity: 1;
+}
+
 @media (max-width: 600px) {
     .screen .note{
         width: 90vw;

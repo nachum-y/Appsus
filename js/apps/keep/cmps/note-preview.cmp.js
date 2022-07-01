@@ -6,12 +6,20 @@ import noteTodos from "./note-todos.cmp.js"
 export default {
     props: ['note', 'isEditable'],
     template: `
-        <component :is="note.type"  
-                    :info="note.info" :isEditable="isEditable">
+        <component 
+            :is="note.type"  
+            :info="note.info" 
+            :isEditable="isEditable"
+        >
         </component>
     `,
     data() {
         return {}
+    },
+    methods: {
+        update(){
+            console.log('update');
+        }
     },
     components: {
         noteTxt,

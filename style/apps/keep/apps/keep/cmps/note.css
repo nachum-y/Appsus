@@ -12,6 +12,15 @@
     margin-block-end: 1rem;
 }
 
+.note-title{
+    letter-spacing: .00625em;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    margin-block-end: 0.3rem;
+}
+
 .note img{
     object-fit: contain;
     width: 100%;
@@ -39,6 +48,60 @@
     top:0.5em;
     width: 2.5em;
     height: 2.5em;
+}
+
+/* To Do note */
+.todo-status{
+    display: flex;
+    align-items: center
+}
+
+.action-btn.todo-btn:hover{
+    background-color: white;
+}
+
+.todo-line{
+ display: flex;
+ justify-content: space-between;
+ align-items: center
+}
+.todo-date{
+    font-size: 0.7rem;
+    color: #777;
+}
+.todos-list{
+    border-block-end: 1px solid rgba(0,0,0,.1);
+    margin-block-end: 0.7rem;
+}
+
+.todos-list h4{
+    letter-spacing: .00625em;
+    font-family: Roboto,Arial,sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+/* txt Note */
+
+.txt-note-content:focus{
+    outline: none !important;
+    padding-inline-end: 2em;
+}
+
+.note-title:focus{
+    outline: none !important;
+    padding-inline-end: 2em;
+}
+
+.txt-note-new-url{
+    margin-block-start: 0.5em;
+    width: 100%;
+    border-radius: 0.5em;
+    border: 1px solid #e0e0e0;
+    padding: 0.5em;
+    background-color: inherit;
+
 }
 
 @media (max-width: 600px) {

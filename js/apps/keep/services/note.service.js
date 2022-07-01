@@ -11,7 +11,8 @@ export const noteService = {
     removeNoteById,
     copyNote,
     togglepin,
-    get
+    get,
+    updateNote
 }
 const NOTES_KEY = 'NOTES_DB'
 
@@ -27,7 +28,7 @@ const gNotes = [
     type: "note-img",
     info: { 
         url: "https://media.giphy.com/media/jUwpNzg9IcyrK/giphy.gif", 
-        title: "homer simpson" }, 
+        title: "Me During Sprint presentation" }, 
     style: { 
         backgroundColor: "#00d" 
     } 
@@ -59,7 +60,13 @@ const gNotes = [
     type: "note-img",
     info: { 
         url: "https://media.giphy.com/media/zMCfqXkwjmTO8/giphy.gif", 
-        title: "What is Happiness" }, 
+        title: "From may to july" }, 
+},
+{   id: "n107", 
+    type: "note-img",
+    info: { 
+        url: "https://media.giphy.com/media/ubWffxIKlnCPdNfvZ9/giphy.gif", 
+        title: "Print 3 AppSus" }, 
 },
 ]
 
@@ -96,6 +103,10 @@ function copyNote(note) {
     return storageService.post(NOTES_KEY, {type, info})
 }
 
+function updateNote(updatedNote) {
+    return storageService.put(NOTES_KEY, updatedNote)
+}
+
 function togglepin(note){
     
     if (note.isPinned === undefined){
@@ -113,7 +124,7 @@ function _prepareNoteInfo(note) {
         case 'note-txt':
         return {txt: data.split('\n')}
         case 'note-img':
-            return  {url: data, title: "My Special Image"}
+            return  {url: data, title: ''}
         case 'note-todos':
             let todos = []
             data.split(',').map(txt => {

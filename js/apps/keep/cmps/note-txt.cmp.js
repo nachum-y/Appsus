@@ -1,8 +1,9 @@
 export default {
     props: ['info', 'isEditable'],
+    emits: ['updateNote'],
     template: `
 
-            <div @input="OnInput" :contenteditable="isEditable">
+            <div @input="OnInput" @focusout="save" :contenteditable="isEditable" class="txt-note-content">
                 <span v-for="line in info.txt">{{line}}<br></span>
             </div>
         `,
@@ -14,7 +15,10 @@ export default {
         methods: {
             OnInput(ev){
                this.newData = ev.target.innerText
-               console.log(this.newData);
+            },
+            save(){
+                this.info.txt = this.newData.split('\n')
+                this.$emit('updateNote', this.info)
             }
         },
 } 

@@ -8,7 +8,7 @@ import noteDetails from "./note-details.cmp.js"
 export default{
     template: ` 
         <section v-if="notes" class="note-app">
-            <router-view @removeNote="removeNote" />
+            <router-view @removeNote="removeNote" @updated="update"/>
             <note-add @newNote="addNote"/>
             <note-list :notes="notesToShow" @removeNote="removeNote" @copyNote="copyNote" @togglepin="togglepin"/>
         </section>
@@ -49,9 +49,12 @@ export default{
         },
         togglepin(note){
             noteService.togglepin(note).then(updatedNote =>{
-                const idx = this.notes.findIndex(note => note.id === updatedNote.id)
-                this.notes.splice(idx,1,updatedNote)
+                this.update(updatedNote)
             })
+        },
+        update(updatedNote){
+            const idx = this.notes.findIndex(note => note.id === updatedNote.id)
+            this.notes.splice(idx,1,updatedNote)
         }
     },
     computed: {
