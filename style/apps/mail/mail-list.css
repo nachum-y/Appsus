@@ -1,7 +1,7 @@
 .mail-preview {
     display: grid;
-    grid-template-columns: 3rem 3rem minmax(10rem,15rem) minmax(5rem, 100%)  minmax(auto, 8rem);
-        /* display: flex; */
+    grid-template-columns: 3rem 3rem minmax(10rem, 15rem) minmax(5rem, 100%) minmax(auto, 8rem);
+    /* display: flex; */
     justify-content: space-between;
     align-items: center;
     font-size: 0.875em;
@@ -13,7 +13,7 @@
 .mail-preview:hover {
     box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
     /* z-index: 2; */
-    
+
 }
 
 .mail-preview .action {
@@ -75,8 +75,17 @@
     color: var(--ptxt2);
     font-size: 0.875rem;
     align-self: center;
+    display: inline;
     /* flex-shrink: 1; */
 
+}
+
+.text-privew .body-mail-preview>* {
+    display: inline;
+}
+
+.text-privew .body-mail-preview br {
+    display: none;
 }
 
 .time-mail {
@@ -107,7 +116,8 @@
     color: var(--ptxt1);
     font-weight: 400;
 }
-.subject-mail-preview::after{
+
+.subject-mail-preview::after {
     content: ' - ';
     color: var(--ptxt2);
 
@@ -180,10 +190,37 @@
 
 }
 
-.read-mail{
+.read-mail {
     background-color: #F5F7F7;
 }
+
 .unread-mail .sender-name,
 .unread-mail .subject-mail-preview {
     font-weight: 700;
-} 
+}
+
+.action:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    width: fit-content;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    stroke-opacity: 0.8;
+
+}
+
+
+
+svg.svg-icons-actions:hover,
+svg.svg-icons-actions:hover>* {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    stroke-opacity: 0.5;
+    fill-opacity: 0.8;
+}
+
+.action.testtt span{
+    display: none;
+    stroke-opacity: 0.5;
+    fill-opacity: 0.8;
+}

@@ -1,5 +1,5 @@
 import svgIcons from './svg-icons.cmp.js'
-import { eventBus } from '../../../services/eventBus-service.js';
+import { eventBus } from '../../../services/eventBus-service.js'
 
 export default {
     template: `
@@ -10,7 +10,7 @@ export default {
         </div>
         <div class="center">
             <label for="search-mail" class="search-mail">
-                <input type="search" name="search-mail" id="search-mail" placeholder="Search mail">
+                <input type="search" name="search-mail"  v-model="inputTxt"  @input="$emit('inputTxt',inputTxt)" id="search-mail" placeholder="Search mail">
                 <svg-icons name="search_icon"/>   
             </label>
         </div>
@@ -26,7 +26,9 @@ export default {
         svgIcons
     },
     data() {
-        return {}
+        return {
+            inputTxt: '',
+        }
     },
     created() { },
     methods: {},

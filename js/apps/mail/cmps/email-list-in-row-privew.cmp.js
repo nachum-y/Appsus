@@ -25,7 +25,7 @@ export default {
 
 
         <div class="body-in-preview">
-         <p>{{mail.body}}</p>   
+         <p v-html="mail.body">{{}}</p>   
         </div>
        
        

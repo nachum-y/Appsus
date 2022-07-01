@@ -3,6 +3,7 @@ import emailApp from "./apps/mail/pages/email-app.js"
 import noteApp from "./apps/keep/pages/note-app.js"
 import emailCompose from "./apps/mail/cmps/email-compose.cmp.js"
 import noteDetails from "./apps/keep/pages/note-details.cmp.js"
+import emailList from './apps/mail/cmps/email-list.cmp.js'
 
 const routes = [
     {
@@ -21,6 +22,12 @@ const routes = [
                 component: emailCompose,
                 props: { showCompose: true }
             },
+            // {
+            // name: 'inbox',
+            // path: 'inbox',
+            // component: emailList,
+            // props: { mails:null}
+            // }
         ]
     },
     {

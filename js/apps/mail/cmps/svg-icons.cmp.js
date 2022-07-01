@@ -36,11 +36,11 @@ export default {
         <path d="M14 10H24V14H10L14 10Z" fill="#5186EC"/>
     </svg>
     
-    <svg v-if="name === 'checkBox'" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="svg-icons-actions" v-if="name === 'checkBox'" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M17.6667 4.83333V17.6667H4.83333V4.83333H17.6667ZM17.6667 3H4.83333C3.825 3 3 3.825 3 4.83333V17.6667C3 18.675 3.825 19.5 4.83333 19.5H17.6667C18.675 19.5 19.5 18.675 19.5 17.6667V4.83333C19.5 3.825 18.675 3 17.6667 3Z" fill="black" fill-opacity="0.16"/>
     </svg>
     
-    <svg v-if="name === 'star'" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="svg-icons-actions" v-if="name === 'star'" width="20" height="19" viewBox="0 0 20 19" :fill="color" xmlns="http://www.w3.org/2000/svg">
         <path d="M10.3875 14.1886L9.99992 13.9547L9.61237 14.1886L5.46912 16.6893L6.56864 11.9761L6.67148 11.5353L6.32933 11.2389L2.66788 8.06696L7.48749 7.65807L7.93814 7.61983L8.11462 7.20342L9.99992 2.7552L11.8852 7.20342L12.0617 7.61983L12.5124 7.65807L17.332 8.06696L13.6705 11.2389L13.3284 11.5353L13.4312 11.9761L14.5307 16.6893L10.3875 14.1886Z" stroke="black" stroke-opacity="0.16" stroke-width="1.5"/>
     </svg>
     

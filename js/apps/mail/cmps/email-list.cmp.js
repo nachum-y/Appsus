@@ -1,6 +1,5 @@
 //Renders a list of <email-preview> pass down an email prop
 // import { emailService } from '../services/email.service.js'
-import { eventBus } from '../../../services/eventBus-service.js'
 import svgIcons from './svg-icons.cmp.js'
 import emailListRowPrivew from './email-list-row-privew.cmp.js'
 import emailListInRowPrivew from './email-list-in-row-privew.cmp.js'
@@ -14,10 +13,9 @@ export default {
     <section  class="mail-list" v-if="mails" >
     <list-emails-action-menu/>
       <div v-for="mail in mails" :key="mail.id">
-            <email-list-row-privew :mail="mail" @click="showMailToggle(mail)" :class="[showMail === mail ? 'show-mail-open' : '',isRead(mail) ? 'read-mail' : 'unread-mail']" />
+            <email-list-row-privew :mail="mail" @starredMail="$emit('starredMail',$event)" @click="showMailToggle(mail)" :class="[showMail === mail ? 'show-mail-open' : '',isRead(mail) ? 'read-mail' : 'unread-mail']" />
             <email-list-in-row-privew v-if="showMail === mail" :mail="showMail" @removeMail="$emit('RemoveMail',mail)"/>
       </div>
-      <email-privew/>
 </section>
 `,
     data() {
@@ -55,9 +53,8 @@ export default {
             })
             this.$emit('unReadMailsList', mails)
         },
-        test(){
-            console.log('test mail');
-        }
+       
+ 
 
     },
     computed: {
