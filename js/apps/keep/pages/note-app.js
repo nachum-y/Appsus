@@ -8,7 +8,7 @@ import noteDetails from "./note-details.cmp.js"
 export default{
     template: ` 
         <section v-if="notes" class="note-app">
-            <router-view/>
+            <router-view @removeNote="removeNote" />
             <note-add @newNote="addNote"/>
             <note-list :notes="notesToShow" @removeNote="removeNote" @copyNote="copyNote" @togglepin="togglepin"/>
         </section>

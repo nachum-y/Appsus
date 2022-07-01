@@ -66,6 +66,6 @@
 
 @media (max-width: 600px) {
     .add-note-box {
-        width: 28.125rem;
+        width: 90%;
     }
 }

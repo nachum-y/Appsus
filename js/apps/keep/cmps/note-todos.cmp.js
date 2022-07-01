@@ -1,7 +1,7 @@
 import todo from "./todo.cmp.js"
 
 export default {
-    props: ['info'],
+    props: ['info', 'isEditable'],
     template: `
             <h3>{{info.label}}</h3>
             <ul>

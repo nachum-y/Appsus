@@ -20,6 +20,17 @@
 .note .actions{
     position: absolute;
     bottom: 0.5em;
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.pin-btn{
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.note:hover > * {
+    opacity: 1;
 }
 
 .action-btn.pin-btn{
@@ -32,6 +43,13 @@
 
 @media (max-width: 600px) {
     .note{
-        width: 28.125rem;
+        width: 90vw;
       }
+    .note-app{
+        width: 100vw;
+        overflow-x: hidden;
+    }
+    .notes-container{
+        width: 100%;
+    }
 }

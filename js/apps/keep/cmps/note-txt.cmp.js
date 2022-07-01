@@ -1,14 +1,13 @@
 export default {
-    props: ['info'],
+    props: ['info', 'isEditable'],
     template: `
 
-            <div @input="OnInput" contenteditable="isEdit">
+            <div @input="OnInput" :contenteditable="isEditable">
                 <span v-for="line in info.txt">{{line}}<br></span>
             </div>
         `,
         data() {
             return {
-                isEdit: false,
                 newData: ''
             }
         },

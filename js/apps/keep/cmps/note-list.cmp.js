@@ -11,7 +11,7 @@ export default{
                 <div v-for="(note,idx) in pinnedNotes" :key="note.id" :class="note.type" class="note defult-text" @click="">
 
                         <router-link :to="'/keep/'+note.id">
-                            <div class="note-content"><note-preview :note="note"/></div>
+                            <div class="note-content"><note-preview :note="note" :isEditable="isEditable"/></div>
                         </router-link>
                            
 
@@ -28,9 +28,9 @@ export default{
             <div class="note-list">
                 <div v-for="(note,idx) in unPinnedNotes" :key="note.id" :class="note.type" class="note defult-text" >
                     <div class="pin-btn action-btn" @click="togglepin(note)"><icons name="unpinned" color="#777" /></div>
-                        <div class="note-content">
-                            <note-preview :note="note"/>
-                        </div>
+                        <router-link :to="'/keep/'+note.id">
+                            <div class="note-content"><note-preview :note="note" :isEditable="isEditable"/></div>
+                        </router-link>
                     <div class="actions">
                         <span class="action-btn remove-btn" @click="remove(note.id)"><icons name="remove" color="#777" /></span>
                         <span class="action-btn remove-btn" @click="copy(note)"><icons name="copy" color="#777" /></span>
@@ -47,7 +47,8 @@ export default{
     data() {
         return {
             pinnedNotes: null,
-            unPinnedNotes: null
+            unPinnedNotes: null,
+            isEditable: false,
         }
     },
     methods: {

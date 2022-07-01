@@ -18,7 +18,7 @@ const NOTES_KEY = 'NOTES_DB'
 const gNotes = [ 
 {   id: "n101", 
     type: "note-txt", 
-    c: true, 
+    isPinned: true, 
     info: { 
         txt: ["Fullstack Me Baby!"] 
     } 
