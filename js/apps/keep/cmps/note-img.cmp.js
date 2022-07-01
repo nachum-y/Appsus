@@ -2,7 +2,7 @@ import { eventBus } from '../../../services/eventBus-service.js'
 
 export default {
     props: ['info', 'isEditable'],
-    // emits: ['updateNote'],
+    emits: ['updateNote'],
     template: `
             <h3 
                 :contenteditable="isEditable" 

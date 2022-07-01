@@ -31,12 +31,14 @@ export default {
             } 
             this.$emit('newNote', this.note)
             this.eltextbox.target.innerText = ''
-            this.clear()
+            this.setType('note-txt')
+            this.note.data = ''
             this.setPlaceholder()
             
         },
         setType(type){
             this.note.type = type
+            this.setPlaceholder()
         },
         setPlaceholder(){
             const type = this.note.type
@@ -57,8 +59,6 @@ export default {
             this.note.data = ev.target.innerText
         },
         clear(){
-         this.setType('note-txt')
-         this.note.data = ''
          this.placeholder = ''
         },
     },
@@ -66,6 +66,9 @@ export default {
         setColor(){
             
         },
+    },
+    watch: {
+        
     },
     components: {
         icons,

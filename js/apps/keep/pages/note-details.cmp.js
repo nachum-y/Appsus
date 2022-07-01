@@ -16,7 +16,7 @@ export default{
 
             <div class="actions">
                 <span class="action-btn remove-btn" @click="remove(note.id)"><icons name="remove" color="#777" /></span>
-                <span class="action-btn copy-btn" @click="copy(note)"><icons name="copy" color="#777" /></span>
+                <span class="close-btn" @click="close">close</span>
             </div>
             </div>
 

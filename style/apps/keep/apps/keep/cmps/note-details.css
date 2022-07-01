@@ -15,10 +15,26 @@
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
 }
 
-.screen .actions {
-    
+.note.details .close-btn {
+    color: rgba(0,0,0,.87);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: .01785714em;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    height: 36px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
 }
 
+.note.details .close-btn:hover {
+    background-color:rgba(95,99,104,0.039);
+
+}
 .note.details .actions{
     display: flex;
     position: absolute;

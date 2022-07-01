@@ -96,6 +96,6 @@ export default{
                 this.devideNotes()
             },
             deep: true
-        }
+        },
     }
 }

@@ -13,17 +13,9 @@ export default {
         >
         </component>
     `,
-    data() {
-        return {}
-    },
-    methods: {
-        update(){
-            console.log('update');
-        }
-    },
     components: {
         noteTxt,
         noteImg,
         noteTodos
-    }
+    },
 }

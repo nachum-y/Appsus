@@ -16,7 +16,7 @@ export default{
     components:{
         noteList,
         noteAdd,
-        noteDetails
+        noteDetails,
     },
     data() {
         return {
