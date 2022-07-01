@@ -8,7 +8,7 @@ export default {
         <span @click="newCompose"  class="compuse">
             <svg-icons name="sideNavCompose"/>
         </span>
-        <side-nav-tabs :unReadMails="unReadMails"/>
+        <side-nav-tabs :mails="mails" @sideNavTab="$emit('sideNavTab',$event)" />
     </section>
 `,
     data() {

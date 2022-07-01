@@ -1,11 +1,18 @@
 // Model - start with a basic model of emails
 import { utilService } from '../../../services/util-service.js'
-import {storageService} from '../../../services/async-storage-service.js'
+import { storageService } from '../../../services/async-storage-service.js'
 export const mailService = {
     getAllMails,
     query,
     removeMailById,
+    addNewMail,
+    setFilter,
+    getEmptyMail,
+    get,
+    save,
+
     
+
 }
 const MAILS_KEY = 'mailsDB'
 
@@ -35,7 +42,10 @@ const criteria = {
 }
 
 
-
+function save(mail) {
+    if (mail.id) return storageService.put(MAILS_KEY, mail)
+    else return storageService.post(MAILS_KEY, mail)
+}
 
 
 function getAllMails() {
@@ -49,6 +59,7 @@ function getAllMails() {
             sentAt: 1656503851958,
             to: 'user@appsus.com',
             email: 'lesliea@mail.com',
+            lables: ['spam', 'starred']
         },
         {
             id: 'e102',
@@ -59,6 +70,7 @@ function getAllMails() {
             sentAt: 1656501851958,
             to: 'user@appsus.com',
             email: 'albert@mail.com',
+            lables: []
         },
         {
             id: 'e143',
@@ -69,33 +81,63 @@ function getAllMails() {
             sentAt: 1656503801958,
             to: 'user@appsus.com',
             email: 'theresa@mail.com',
+            lables: []
         },
     ]
     return mails
 }
 
-
+function setFilter() {
+    return ({
+        txt: null,
+        inbox: null,
+        unread: null,
+        sent: null,
+        type: null,
+    })
+}
 
 _createNotes()
 function _createNotes() {
     const gMails = getAllMails()
     let mails = utilService.loadFromStorage(MAILS_KEY)
     if (!mails || !mails.length || mails === 'undifined') {
-      utilService.saveToStorage(MAILS_KEY, gMails)
+        utilService.saveToStorage(MAILS_KEY, gMails)
     }
     return mails
-  }
+}
 
 function query() {
     return storageService.query(MAILS_KEY)
-  }
+}
 
 function removeMailById(mailId) {
-    return storageService.remove(MAILS_KEY,mailId)
+    return storageService.remove(MAILS_KEY, mailId)
 }
 
-function addNewMail(mail){
-    const newMail = {type: note.type, info: _prepareNoteInfo(note)}
-    return storageService.post(MAILS_KEY, newNote)
+function getEmptyMail(){
+    const newMail = {
+        to: '',
+        subject:'',
+        body: '',
+    }
+    return newMail
 }
 
+function get(mailId) {
+    return storageService.get(MAILS_KEY, mailId)
+}
+function addNewMail(mail) {
+    const newMail = {
+        to: mail.recipients,
+        subject: mail.subject,
+        body: mail.body,
+        isRead: true,
+        sentAt: Date.now(),
+        email: 'user@appsus.com',
+        fullname: 'Mahatma Appsus',
+        lables: []
+
+    }
+    return storageService.post(MAILS_KEY, newMail)
+}
