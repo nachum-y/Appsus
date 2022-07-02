@@ -1,0 +1,102 @@
+
+.home-page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.home-page .content{
+    margin-top: 5%;
+}
+
+
+.apps-container{
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    max-width: 1200px;
+    margin: auto;
+    margin-block-end: 1em;
+}
+.home-page h1{
+    font-size: 4.375rem;
+    line-height: 5rem;
+    word-wrap: initial;
+    width: 60vw;
+    margin: auto;
+    margin-block-end: 3rem;
+    text-align: center;
+}
+
+.home-page p{
+    font-size: 0.87rem;
+    text-align: center;
+    color: #5f6368;
+
+}
+
+.app-card{
+    display: flex;
+    width: 18rem;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    padding: 1em;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 0%), 0 2px 6px 2px rgb(60 64 67 / 0%);
+    transition: box-shadow .2s;
+}
+
+.app-card:hover{
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+
+}
+
+.app-card h2{
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: .25px;
+    color: #202124;
+
+}
+
+
+.app-card .logo svg{
+    height: 90px;
+    width: 90px;
+}
+
+.app-card .logo.keep svg{
+    height: 90px;
+    width: 64px;
+}
+
+.app-card .logo {
+    height: 200px;
+    width: 200px;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block-end: 1em;
+
+}
+
+@media (max-width: 1080px) {
+    .apps-container{
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .app-card{
+        max-width: 30vw;
+        min-width: 300px;
+        margin-block-end: 1em;
+    }
+    .home-page h1{
+        margin-block-end: 1em;
+
+        
+    }
+}

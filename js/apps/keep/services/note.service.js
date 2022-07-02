@@ -18,74 +18,82 @@ const NOTES_KEY = 'NOTES_DB'
 
 const gNotes = [
     {
-        id: "n101",
-        type: "note-txt",
+        id: "m101",
+        type: "note-img",
+        isPinned: false,
+        info: {
+            url: "https://media.giphy.com/media/D12CsrRNv7gL6/giphy.gif",
+            title: "me After"
+        },
+        
+    },
+    {
+        id: "m102",
+        type: "note-img",
         isPinned: true,
         info: {
-            txt: ["Fullstack Me Baby!"]
-        }
-    },
-    {
-        id: "n102",
-        type: "note-img",
-        info: {
-            url: "https://media.giphy.com/media/jUwpNzg9IcyrK/giphy.gif",
-            title: "Me During Sprint presentation"
+            url: "https://media.giphy.com/media/7eAvzJ0SBBzHy/giphy.gif",
+            title: "Me before Sprint 3"
         },
-        style: {
-            backgroundColor: "#aecbfc"
-        }
+        style: {backgroundColor: "#fccfe8"}
     },
     {
-        id: "n103",
+        id: "m103",
         type: "note-todos",
         info: {
-            title: "Get my stuff together",
+            title: "Coding Academy Sprint 3",
             todos: [
-                { txt: "Driving liscence", doneAt: null },
-                { txt: "Coding power", doneAt: 187111111 }
+                { txt: "sleep", doneAt: null },
+                { txt: "eat", doneAt: null },
+                { txt: "workout", doneAt: null },
+                { txt: "support video notes", doneAt: 1656784270853 },
+                { txt: "support todo notes", doneAt: 1656784270853 }
             ]
         }
     },
     {
-        id: "n104",
-        type: "note-img",
-        info: {
-            url: "https://media.giphy.com/media/egHTZeNZpuP1ep4C5f/giphy.gif",
-            title: "Bye Kanye"
-        },
-    },
-    {
-        id: "n105",
-        type: "note-txt",
-        isPinned: true,
-        info: {
-            txt: ["Hell On keys"]
-        }
-    },
-    {
-        id: "n106",
-        type: "note-img",
-        info: {
-            url: "https://media.giphy.com/media/zMCfqXkwjmTO8/giphy.gif",
-            title: "From may to july"
-        },
-    },
-    {
-        id: "n107",
-        type: "note-img",
-        info: {
-            url: "https://media.giphy.com/media/ubWffxIKlnCPdNfvZ9/giphy.gif",
-            title: "Print 3 AppSus"
-        },
-    },
-    {
-        id: "n108",
+        id: "m104",
         type: "note-video",
         info: {
             url: "https://www.youtube.com/watch?v=6hzrDeceEKc&ab_channel=Oasis",
             title: "Wonderwall"
         },
+        style: {backgroundColor: "#cbf2fa"}
+    },
+     {
+        id: "m105",
+        type: "note-txt",
+        isPinned: true,
+        info: {
+            txt: ['Two things are infinite:','The universe and...','Coding Academy projects']
+        }
+    },
+    {
+        id: "m106",
+        type: "note-img",
+        isPinned: false,
+        info: {
+            url: "https://media.giphy.com/media/rxnhSy4J3KyXe/giphy.gif",
+            title: "Peantus"
+        },
+    },
+    {
+        id: "m107",
+        type: "note-todos",
+        info: {
+            title: "Don't Forget",
+            todos: [
+                { txt: "eggs", doneAt: null },
+                { txt: "milk", doneAt: null },
+                { txt: "protein powder", doneAt: null },
+                { txt: "apples", doneAt: null },
+                { txt: "coke zero", doneAt: null },
+                { txt: "wine", doneAt: null },
+                { txt: "cheese", doneAt: 1656784270853 },
+                { txt: "tooth paste", doneAt: 1656784270853 }
+            ]
+        },
+        style: {backgroundColor: "#fff476"}
     },
 ]
 
