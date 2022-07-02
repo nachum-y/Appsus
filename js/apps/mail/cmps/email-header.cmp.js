@@ -1,7 +1,7 @@
 import svgIcons from './svg-icons.cmp.js'
-import { eventBus } from '../../../services/eventBus-service.js'
-
+import emailListSearchbar from './email-list-searchbar.cmp.js'
 export default {
+    props: ['mailToSearch'],
     template: `
     <header class="main-header-mail-app">
         <div class="left-side">
@@ -9,9 +9,10 @@ export default {
             <svg-icons name="logo"/>
         </div>
         <div class="center">
-            <label for="search-mail" class="search-mail">
-                <input type="search" name="search-mail"  v-model="inputTxt"  @input="$emit('inputTxt',inputTxt)" id="search-mail" placeholder="Search mail">
+            <label ref="searchBar" for="search-mail" class="search-mail">
+                <input @focus="activeModal=true" @focusout="activeModal=false" type="search" name="search-mail"  v-model="inputTxt"  @input="$emit('inputTxt',inputTxt)" id="search-mail" placeholder="Search mail">
                 <svg-icons name="search_icon"/>   
+                <div v-if="mailToSearch" class="searchModal-header" :class="{activeModal:activeModal}" :style="modalPosHieght" ><email-list-searchbar :mailsSearch="mailToSearch" :input="inputTxt" /></div>
             </label>
         </div>
         <div class="right-side">
@@ -23,15 +24,23 @@ export default {
 
 `,
     components: {
-        svgIcons
+        svgIcons,
+        emailListSearchbar
     },
     data() {
         return {
             inputTxt: '',
+            activeModal: false,
+            modalPosHieght: null,
         }
     },
     created() { },
     methods: {},
-    computed: {},
+    computed: {
+    },
     unmounted() { },
+    mounted() {
+        const elSearchBar = this.$refs.searchBar.getBoundingClientRect()
+        this.modalPosHieght = `top:${elSearchBar.height - 1}px;`
+    }
 }

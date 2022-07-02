@@ -5,22 +5,39 @@ import emailListRowPrivew from './email-list-row-privew.cmp.js'
 import emailListInRowPrivew from './email-list-in-row-privew.cmp.js'
 import emailPrivew from '../cmps/email-preview.cmp.js'
 import listEmailsActionMenu from '../cmps/list-emails-action-menu.cmp.js'
+import rightClickActionsMenu from '../cmps/right-click-actions-menu.cmp.js'
+import showMsgInMailList from '../cmps/show-msg-in-mail-list.cmp.js'
 
 
 export default {
-    props: ['mails'],
+    props: ['mails','currPage','showsPerPage'],
     template: `
-    <section  class="mail-list" v-if="mails" >
+    <section @click="closeActionsModal" class="mail-list" v-if="mails" >
     <list-emails-action-menu/>
-      <div v-for="mail in mails" :key="mail.id">
-            <email-list-row-privew :mail="mail" @starredMail="$emit('starredMail',$event)" @click="showMailToggle(mail)" :class="[showMail === mail ? 'show-mail-open' : '',isRead(mail) ? 'read-mail' : 'unread-mail']" />
+      <div v-for="mail in mails.slice(currPage*showsPerPage,(currPage+1)*showsPerPage)" :key="mail.id">
+            <email-list-row-privew :mail="mail" 
+            @starredMail="$emit('starredMail',$event)" 
+            @click="showMailToggle(mail)" 
+            @click.right.prevent="openActionsModal($event,mail)" 
+            :class="[showMail === mail ? 'show-mail-open' : '',isRead(mail) ? 'read-mail' : 'unread-mail']" />
+
             <email-list-in-row-privew v-if="showMail === mail" :mail="showMail" @removeMail="$emit('RemoveMail',mail)"/>
       </div>
+      <right-click-actions-menu v-if="showMailActionMenu"  
+                                :mail="showMailActionMenu" 
+                                :pos="posModal" 
+                                @removeMail="$emit('RemoveMail',$event)"
+                                @makeAsUnReadMail="$emit('makeAsUnReadMail',$event)"
+                                @makeAsReadMail="$emit('makeAsReadMail',$event)" />
+      <show-msg-in-mail-list :mails="mails" :taba="this.$route.query.tab+'EmptyMsg'"/>
+    
 </section>
 `,
     data() {
         return {
             showMail: null,
+            showMailActionMenu: null,
+            posModal: null,
         }
     },
     components: {
@@ -28,7 +45,9 @@ export default {
         emailListRowPrivew,
         emailListInRowPrivew,
         emailPrivew,
-        listEmailsActionMenu
+        listEmailsActionMenu,
+        rightClickActionsMenu,
+        showMsgInMailList
     },
     created() {
         this.unReadMailsList()
@@ -36,7 +55,7 @@ export default {
     },
     methods: {
         showMailToggle(mail) {
-            mail.isRead = true
+            this.$emit('makeAsReadMail', mail)
             this.showMail = this.showMail === mail ? null : mail
             this.unReadMailsList()
 
@@ -53,8 +72,17 @@ export default {
             })
             this.$emit('unReadMailsList', mails)
         },
-       
- 
+        openActionsModal(el, mail) {
+            this.showMailActionMenu = mail
+            this.posModal = { eltop: el.clientY, left: el.clientX }
+            return
+        },
+        closeActionsModal(ev) {
+            this.showMailActionMenu = null
+
+        },
+
+
 
     },
     computed: {
@@ -62,4 +90,5 @@ export default {
 
     },
     unmounted() { },
+
 }

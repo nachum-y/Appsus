@@ -17,10 +17,10 @@ export default {
             </div>
         </div>
         <label for="input-recipients">
-            <input type="email" v-model="newMail.recipients" class="input-recipients" id="input-recipients" placeholder="Recipients">
+            <input type="email" v-model="newMail.recipients" class="input-recipients" id="input-recipients" placeholder="Recipients" required>
         </label>
         <label for="input-subject">
-            <input type="text" v-model="newMail.subject" class="input-subject" id="input-subject" placeholder="Subject">
+            <input type="text" v-model="newMail.subject" class="input-subject" id="input-subject" placeholder="Subject" required>
         </label>
         <div @input="onInput" contenteditable="true"   class="compose-body">
             
@@ -57,8 +57,9 @@ export default {
     methods: {
         save() {
             console.log('save in component compose')
-            this.$emit('saveC', 'save')
             eventBus.emit('sendMail', this.newMail)
+            this.$router.replace({ name:'mail', query: { tab: 'sent' } })
+            this.closeCompose()
         },
         onInput(e) {
 

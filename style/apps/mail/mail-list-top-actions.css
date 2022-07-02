@@ -1,0 +1,21 @@
+.top-actions-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline-end: 2rem;
+
+}
+
+.pagination-count{
+    font-size: .875rem;
+    color: var(--ptxt2);
+}
+
+.actoins-page{
+    display: flex;
+    flex-direction: row;
+}
+
+.pagination-curr-list{
+    display: flex;
+}

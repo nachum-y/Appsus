@@ -45,3 +45,16 @@
     left: 1em;
     top: 0.5em;
 }
+#search-mail:focus{
+    background-color: #fff;
+    border-radius: 0;
+    border-bottom: #EDEFF1 2px solid;
+    
+
+}
+
+
+svg.svg-icons-actions {
+    display: flex;
+    align-items: center;
+}

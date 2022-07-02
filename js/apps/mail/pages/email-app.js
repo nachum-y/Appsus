@@ -10,10 +10,17 @@ import emailFilter from '../cmps/email-filter.cmp.js'
 
 export default {
     template: `
-    <email-header @inputTxt="filterMails"/>
+    <email-header :mailToSearch="mailToSearch" @inputTxt="filterMailsToSearch"/>
     <section v-if="mails" class="main-email-app">
         <side-nav :mails="mails" :unReadMails="unReadMails" @sideNavTab="filterMailsbyType" />
-        <email-list :mails="mailsToDisplay" @unReadMailsList="unReadMailsList" @removeMail="removeMail" @starredMail="starredMail"/> 
+        <email-list :mails="mailsToDisplay"
+                    :currPage="page"
+                    :showsPerPage="showsPerPage"
+                    @unReadMailsList="unReadMailsList" 
+                    @removeMail="removeMail" 
+                    @starredMail="starredMail"
+                    @makeAsReadMail="makeAsReadMail"
+                    @makeAsUnReadMail="makeAsUnReadMail"/> 
         <router-view></router-view>
     </section>
 `,
@@ -23,6 +30,7 @@ export default {
         sideNav,
         mainEmailApp,
         emailFilter,
+
     },
 
     data() {
@@ -33,12 +41,18 @@ export default {
             unsubscribe: null,
             filters: {
                 txt: null,
-                inbox: true,
+                inbox: null,
                 unread: null,
                 sent: null,
-                type: null,
+                starred: null,
+                draft: null,
+                trash: null,
+
             },
             mailToEdit: null,
+            mailToSearch: null,
+            page: 0,
+            showsPerPage: 25,
         }
     },
     created() {
@@ -47,11 +61,23 @@ export default {
                 this.mails = mail
             }),
             this.unsubscribe = eventBus.on('sendMail', this.sendMail)
-            
+
+        if (this.filters.inbox) this.$router.replace({ path: '/mail', query: { tab: 'inbox' } })
+        if (!this.$route.query.tab) {
+            this.$router.replace({ path: '/mail', query: { tab: 'inbox' } })
+            this.filters.inbox = 'inbox'
+        }
+
+
+        this.filters[this.$route.query.tab] = true
+
+
+
     },
 
     methods: {
         unReadMailsList(mails) {
+            this.unReadMails = []
             this.unReadMails = new Array(...mails)
         },
         removeMail(mail) {
@@ -72,8 +98,8 @@ export default {
             this.filters.txt = filter
         },
         filterMailsbyType(type) {
-            console.log(type)
-            console.log(mailService.setFilter())
+            // console.log(type)
+            // console.log(mailService.setFilter())
             switch (type) {
                 case 'sent':
                     this.filters = mailService.setFilter()
@@ -85,7 +111,19 @@ export default {
                     break
                 case 'starred':
                     this.filters = mailService.setFilter()
-                    this.filters.type = 'starred'
+                    this.filters.starred = 'starred'
+                    break
+                case 'unread':
+                    this.filters = mailService.setFilter()
+                    this.filters.unread = 'unread'
+                    break
+                case 'draft':
+                    this.filters = mailService.setFilter()
+                    this.filters.draft = 'draft'
+                    break
+                case 'trash':
+                    this.filters = mailService.setFilter()
+                    this.filters.trash = 'trash'
                     break
 
                 default:
@@ -98,7 +136,7 @@ export default {
 
             mailService.get(mailId).then(mail => {
                 this.mailToEdit = mail
-                const idx = this.foundLabel('starred',this.mailToEdit)
+                const idx = this.foundLabel('starred', this.mailToEdit)
                 if (!isNaN(idx) && idx !== -1) {
                     this.mailToEdit.lables.splice(idx, 1)
                     mailService.save(this.mailToEdit).then(mail => {
@@ -118,12 +156,48 @@ export default {
 
         },
         foundLabel(label, mail) {
-            console.log(mail);
-            if(mail) return mail.lables.findIndex(lable => lable === label)
-           
+            console.log(mail)
+            if (mail) return mail.lables.findIndex(lable => lable === label)
+
         },
+        onSetFilterBy() {
+            const queryStringParams = `?tab="test"`
+            const newUrl = window.location.protocol + '//' + window.location.host + window.location.pathname + queryStringParams
+            window.history.pushState({ path: newUrl }, '', newUrl)
+        },
+        makeAsReadMail(mail) {
+            mail.isRead = true
+            const mailId = mail.id
+            mailService.get(mailId).then(mail => {
+                this.mailToEdit = mail
+                this.mailToEdit.isRead = true
+                mailService.save(this.mailToEdit).then(mail => {
+                    console.log(mail)
+                })
+            })
+        },
+        makeAsUnReadMail(mail) {
+            mail.isRead = false
+            const mailId = mail.id
+            mailService.get(mailId).then(mail => {
+                this.mailToEdit = mail
+                this.mailToEdit.isRead = false
+                mailService.save(this.mailToEdit).then(mail => {
+                    console.log(mail)
+                })
+            })
+        },
+        filterMailsToSearch(input) {
+            var mails = this.mails
+            const regex = new RegExp(input, 'i')
+            mails = mails.filter(mail => regex.test(mail.body))
+            if (mails) {
+                
+                this.mailToSearch =mails.slice(0, 5)
+            }
+            if (!input) this.mailToSearch = null
 
-
+        }
     },
     computed: {
         mailsToDisplay() {
@@ -134,23 +208,27 @@ export default {
             }
             if (this.filters?.sent) {
                 mails = mails.filter(mail => mail.to !== 'user@appsus.com')
+                this.$router.push({ query: { ...this.$route.query, tab: 'sent' } })
             }
             if (this.filters?.inbox) {
                 mails = mails.filter(mail => mail.to === 'user@appsus.com')
-                console.log('inbox')
+                this.$router.push({ query: { ...this.$route.query, tab: 'inbox' } })
             }
-            if (this.filters?.type){
+            if (this.filters?.starred) {
                 mails = mails.filter(mail => {
-                   const idx = this.foundLabel('starred',mail)
-                  if (!isNaN(idx) && idx !== -1){
-                    console.log('this.foundLabel:',this.foundLabel('starred',mail))
-                    console.log(mail);    
-                    return mail   
+                    const idx = this.foundLabel('starred', mail)
+                    if (!isNaN(idx) && idx !== -1) {
+                        this.$router.push({ query: { ...this.$route.query, tab: 'starred' } })
+                        return mail
 
-                  } 
+                    }
                 })
             }
-
+            if (this.filters?.unread) {
+                mails = this.mails.filter(mail => mail.isRead !== true)
+                this.$router.push({ query: { ...this.$route.query, tab: 'unread' } })
+            }
+            // return mails.slice(this.page * this.showsPerPage, (this.page * this.showsPerPage)+this.showsPerPage)
             return mails
         }
     },
