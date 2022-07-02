@@ -37,20 +37,19 @@
     padding: 1em;
     padding-inline-start: 4em;
     border-radius: 8px;
-    border: none;
+    border: 2px solid transparent;
     background-color: rgba(241, 243, 244, 1);
+    transition: background-color 200ms ease-in,width 100ms ease-out;
 }
 .search-mail .search-icon-header {
     position: absolute;
     left: 1em;
-    top: 0.5em;
+    top: 0.6em;
 }
 #search-mail:focus{
     background-color: #fff;
-    border-radius: 0;
+    border-radius: 8px;
     border-bottom: #EDEFF1 2px solid;
-    
-
 }
 
 

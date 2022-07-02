@@ -5,11 +5,11 @@ import sideNav from '../cmps/side-nav.cmp.js'
 
 export default {
     template: `
-    <section class="main-email-app">
-        <side-nav />
-        <email-list/> 
-        <router-view :saveC="saveC"></router-view>
-    </section>
+    <!-- <section class="main-email-app"> -->
+        <!-- <side-nav /> -->
+        <!-- <email-list/>  -->
+        <!-- <router-view :saveC="saveC"></router-view> -->
+    <!-- </section> -->
 `,
     components: {
         emailList,

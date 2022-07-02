@@ -1,11 +1,13 @@
 import svgIcons from './svg-icons.cmp.js'
 import emailListSearchbar from './email-list-searchbar.cmp.js'
+import appHeader from '../../../cmps/app-header.cmp.js'
 export default {
+    emits:['openHeader'],
     props: ['mailToSearch'],
     template: `
     <header class="main-header-mail-app">
         <div class="left-side">
-            <svg-icons name="menu"/>
+           <span @click="$emit('openHeader')"> <svg-icons  name="menu"/></span>
             <svg-icons name="logo"/>
         </div>
         <div class="center">

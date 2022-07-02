@@ -5,6 +5,8 @@ import { mailService } from "../services/email.service.js"
 import svgIcons from './svg-icons.cmp.js'
 
 export default {
+
+    name: 'emailCompose',
     props: ['showCompose'],
     template: `
     <form  v-if="openCompose && newMail" @submit.prevent="save" class="new-compose">
@@ -58,8 +60,7 @@ export default {
         save() {
             console.log('save in component compose')
             eventBus.emit('sendMail', this.newMail)
-            this.$router.replace({ name:'mail', query: { tab: 'sent' } })
-            this.closeCompose()
+            this.$router.back()
         },
         onInput(e) {
 

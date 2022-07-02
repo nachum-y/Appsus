@@ -10,7 +10,7 @@ export default{
         <section v-if="notes" class="note-app">
             
             <router-view @removeNote="removeNote" @updated="update" @togglepin="togglepin"/>
-            <note-header @inputTxt="searchByTxt"/>
+            <note-header @openHeader="$emit('openHeader')" @inputTxt="searchByTxt"/>
             <note-add @newNote="addNote"/>
             <note-list :notes="notesToShow" @removeNote="removeNote" @copyNote="copyNote" @togglepin="togglepin" @save="save"/>
         </section>

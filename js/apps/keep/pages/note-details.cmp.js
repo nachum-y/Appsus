@@ -27,7 +27,7 @@ export default {
         </div> 
     `,
     created() {
-        const id = this.$route.params.noteId
+        const id = (this.$route.params.noteId)
         noteService.get(id).then(note => this.note = note)
     },
     data() {

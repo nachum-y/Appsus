@@ -14,6 +14,7 @@
 /* APPS */
 @import 'apps/keep/main.css';
 @import 'apps/mail/main.css';
+@import 'apps/header/main.css';
 
 /* mail */
 @import 'apps/mail/side-nav.css';
@@ -25,6 +26,7 @@
 @import 'apps/mail/right-click-actions-menu.css';
 @import 'apps/mail/mail-preview-in-search.css';
 @import 'apps/mail/mail-list-top-actions.css';
+@import 'apps/mail/mail-preview-mail-page.css';
 
 /* Media Queries */
 @import 'mq/mq.css';
