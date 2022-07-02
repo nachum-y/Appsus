@@ -5,7 +5,7 @@ export default {
         <div class="left-side">
             <span @click="$emit('openHeader')"><svg-icons name="menu"/></span>
             <svg-icons name="keep-logo"/> 
-            <span class="keep-logo">Keep</span>
+            <span class="keep-logo txt">Keep</span>
         </div>
         <div class="center">
             <label ref="searchBar" for="search-mail" class="search-mail">

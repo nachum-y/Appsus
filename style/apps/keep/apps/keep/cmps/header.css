@@ -72,4 +72,7 @@
     .main-header-mail-app.keep .search-mail {
         width: 100%;
     }
+    .main-header-mail-app.keep .keep-logo.txt {
+        display: none;
+    }
 }
