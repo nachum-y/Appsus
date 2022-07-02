@@ -27,3 +27,7 @@ background: var(--lightRed);
 color: var(--darkRed);
 fill: var(--darkRed);
 }
+
+@media (max-width: 750px) {
+
+}

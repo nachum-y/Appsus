@@ -31,8 +31,9 @@ export default {
     },
     methods: {
         activeTabToggle(tab) {
+            this.$router.replace({ path: '/mail' })
             this.activeTab = tab
-            this.$emit('sideNavTab',tab)
+            this.$emit('sideNavTab', tab)
         }
     },
     computed: {
@@ -42,9 +43,8 @@ export default {
         },
     },
     mounted() {
-        if(this.$route.query.tab) this.activeTab = this.$route.query.tab
-        console.log(this.$route.query);
-        console.log(this.activeTab);
+        if (this.$route.query.tab) this.activeTab = this.$route.query.tab
+
     },
     unmounted() { },
 }

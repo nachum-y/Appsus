@@ -1,29 +1,50 @@
-.compuse{
+.compuse {
     display: flex;
     justify-content: center;
     align-items: center;
     -webkit-border-radius: 28px;
     border-radius: 28px;
-    /* font-size: 0; */ /*onClose*/
+    /* font-size: 0; */
+    /*onClose*/
     height: 56px;
     padding: 1rem;
     margin: 0.5rem;
-    /* width: 56px; */ /*onClose*/
+    /* width: 56px; */
+    /*onClose*/
     cursor: pointer;
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
     margin-bottom: 1rem;
 }
 
-.compuse:after{
+.compuse:after {
     content: "Compose";
     margin-inline: 1rem;
     font-weight: 500;
 }
-.compuse:hover{
+
+.compuse:hover {
     box-shadow: 0 1px 3px 0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%);
     background-color: #fafafb;
 }
-.side-nav a{
+
+.side-nav a {
     color: var(--ptxt1);
     text-decoration: none;
+}
+
+
+/* /// MQ // */
+
+
+/* MOBILE ONLY */ 
+@media (max-width: 750px) {
+
+    .side-nav{
+        display: none;
+    }
+
+}
+
+@media (min-width: 840px) {
+
 }

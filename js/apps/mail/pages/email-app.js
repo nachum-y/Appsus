@@ -22,7 +22,7 @@ export default {
                     @starredMail="starredMail"
                     @makeAsReadMail="makeAsReadMail"
                     @makeAsUnReadMail="makeAsUnReadMail"/> 
-        <router-view ></router-view>
+        <router-view @removeMail="removeMail"></router-view>
     </section>
 `,
     components: {
@@ -97,8 +97,7 @@ export default {
             this.filters.txt = filter
         },
         filterMailsbyType(type) {
-            // console.log(type)
-            // console.log(mailService.setFilter())
+          
             switch (type) {
                 case 'sent':
                     this.filters = mailService.setFilter()
@@ -139,14 +138,12 @@ export default {
                 if (!isNaN(idx) && idx !== -1) {
                     this.mailToEdit.lables.splice(idx, 1)
                     mailService.save(this.mailToEdit).then(mail => {
-                        console.log(mail)
                     })
                     return
                 }
                 else if (idx) {
                     this.mailToEdit.lables.push('starred')
                     mailService.save(this.mailToEdit).then(mail => {
-                        console.log(mail)
                     })
                     return
                 }
@@ -155,7 +152,6 @@ export default {
 
         },
         foundLabel(label, mail) {
-            console.log(mail)
             if (mail) return mail.lables.findIndex(lable => lable === label)
 
         },
@@ -166,7 +162,6 @@ export default {
                 this.mailToEdit = mail
                 this.mailToEdit.isRead = true
                 mailService.save(this.mailToEdit).then(mail => {
-                    console.log(mail)
                 })
             })
         },
@@ -177,7 +172,6 @@ export default {
                 this.mailToEdit = mail
                 this.mailToEdit.isRead = false
                 mailService.save(this.mailToEdit).then(mail => {
-                    console.log(mail)
                 })
             })
         },
@@ -206,7 +200,8 @@ export default {
             }
             if (this.filters?.inbox) {
                 mails = mails.filter(mail => mail.to === 'user@appsus.com')
-                this.$router.replace({ query: { ...this.$route.query, tab: 'inbox' } })
+                this.$router.replace({ query: { tab: 'inbox' } })
+                // this.$router.replace({ query: { ...this.$route.query, tab: 'inbox' } })
             }
             if (this.filters?.starred) {
                 mails = mails.filter(mail => {

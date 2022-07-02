@@ -57,3 +57,7 @@ svg.svg-icons-actions {
     display: flex;
     align-items: center;
 }
+
+@media (max-width: 750px) {
+
+}

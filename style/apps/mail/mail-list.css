@@ -219,8 +219,29 @@ svg.svg-icons-actions:hover>* {
     fill-opacity: 0.8;
 }
 
-.action.testtt span{
+.action.testtt span {
     display: none;
     stroke-opacity: 0.5;
     fill-opacity: 0.8;
+}
+
+
+@media (max-width: 750px) {
+    .categories-tabs {
+        justify-content: space-evenly;
+    }
+
+    .categories-tabs>* {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .mail-preview {
+
+        grid-template-columns: 2.5rem 2.5rem minmax(2rem, 10rem) minmax(5rem, 100%) minmax(auto, 8rem);
+
+    }
+
 }

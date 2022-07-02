@@ -1,0 +1,25 @@
+@media (max-width: 750px) {
+
+
+    .main-header-mail-app .right-side {
+        display: none;
+    }
+
+    .main-header-mail-app .left-side .app-logo-header {
+        display: none;
+        padding-inline-end: 1rem;
+    }
+
+    .main-header-mail-app .left-side {
+        margin-inline-end: 1rem;
+    }
+
+    .main-header-mail-app .center {
+        width: 100%;
+    }
+
+    .main-header-mail-app .search-mail {
+        width: 100%;
+
+    }
+}
