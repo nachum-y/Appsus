@@ -19,11 +19,9 @@ export default {
         sideNavTabs,
     },
     created() { 
-        console.log(this.unReadMails);
     },
     methods: {
         newCompose() {
-            console.log('newCompose() called');
             this.$router.push({ name: 'newCompose', params: { showCopose: true},key:this.$route.fullPath })
 
             // router.push('+/compose=new')
@@ -31,6 +29,5 @@ export default {
     },
     computed: {},
     mounted() {
-        console.log(this.mails);
      },
 }

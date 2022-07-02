@@ -8,7 +8,7 @@ export default {
     <header class="main-header-mail-app">
         <div class="left-side">
            <span @click="$emit('openHeader')"> <svg-icons  name="menu"/></span>
-            <svg-icons name="logo"/>
+           <span class="app-logo-header"> <svg-icons name="logo"/></span>
         </div>
         <div class="center">
             <label ref="searchBar" for="search-mail" class="search-mail">

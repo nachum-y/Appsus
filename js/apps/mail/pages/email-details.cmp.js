@@ -13,28 +13,22 @@ export default {
     <section class="preview-mail-page" v-if="mail">
         <list-emails-action-top-menu-emaiil-details-page/>
     <div class="top-mail-privew">
-
-<h2 class="mail-preview-subject">{{mail.subject}}</h2>
-<div class="actions-mail-privew">
-    <!-- <span><svg-icons name="openInNewWindow"/></span> -->
-    <span @click="$emit('RemoveMail',mail)"><svg-icons name="draft"/></span>  </div>
-</div>
-
-<span >
-<button @click="$router.push('/mail')">GO BACK</button>    
-click here </span>
-<div class="sender-with-avatar">
-<span class="avatar-in-preview"><svg-icons name="avatarEmpty"/></span>
-<div class="sender-details">
-    <p class="sender-name-and-mail"><span class="sender-name-in-preview">{{mail.fullname}}</span><span class="sender-mail-in-preview">&lt;{{mail.email}}></span> </p>
-    <span>To me</span>
-</div>
-</div>
-
-
-<div class="body-in-preview">
-<p v-html="mail.body"></p>   
-</div>
+        <h2 class="mail-preview-subject">{{mail.subject}}</h2>
+        <div class="actions-mail-privew">
+            <button @click="$router.push('/mail')">GO BACK</button> 
+            <span @click="removeMail"><svg-icons name="draft"/></span> 
+        </div>
+    </div>
+    <div class="sender-with-avatar">
+        <span class="avatar-in-preview"><svg-icons name="avatarEmpty"/></span>
+        <div class="sender-details">
+            <p class="sender-name-and-mail"><span class="sender-name-in-preview">{{mail.fullname}}</span><span class="sender-mail-in-preview">&lt;{{mail.email}}></span> </p>
+            <span>To me</span>
+        </div>
+    </div>
+    <div class="body-in-preview">
+        <p v-html="mail.body"></p>   
+    </div>
 
     </section>
 `,
@@ -54,13 +48,18 @@ click here </span>
         const id = this.$route.params.mailId
         mailService.get(id).then(mail => {
             this.mail = mail
-            console.log(this.$router.currentRoute);
+            console.log(this.$router.currentRoute)
         })
-        console.log('pagePrivew');
-     
+        console.log('pagePrivew')
+
     },
 
-    methods: {},
+    methods: {
+        removeMail() {
+            this.$emit('removeMail', this.mail)
+            this.$router.push('/mail')
+        }
+    },
     computed: {},
     unmounted() { },
 }

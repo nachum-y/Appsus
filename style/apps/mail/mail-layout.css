@@ -10,3 +10,8 @@
 .side-nav{
     min-width: 14.5rem;
 }
+
+
+@media (max-width: 750px) {
+
+}

@@ -27,6 +27,7 @@
 @import 'apps/mail/mail-preview-in-search.css';
 @import 'apps/mail/mail-list-top-actions.css';
 @import 'apps/mail/mail-preview-mail-page.css';
+@import 'apps/mail/main-mail-header.css';
 
 /* Media Queries */
 @import 'mq/mq.css';
