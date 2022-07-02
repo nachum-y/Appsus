@@ -26,6 +26,7 @@
     width: 100%;
 }
 
+
 .note .actions{
     position: absolute;
     bottom: 0.5em;
@@ -53,7 +54,7 @@
 /* To Do note */
 .todo-status{
     display: flex;
-    align-items: center
+    align-items: center;
 }
 
 .action-btn.todo-btn:hover{
@@ -63,8 +64,14 @@
 .todo-line{
  display: flex;
  justify-content: space-between;
- align-items: center
+ align-items: center;
+ 
 }
+.todos-form{
+    display: flex;
+    align-items: flex-start
+}
+
 .todo-date{
     font-size: 0.7rem;
     color: #777;
@@ -81,6 +88,14 @@
     font-weight: 400;
     line-height: 1.5rem;
 }
+input.todo-txt {
+    width: 300px;
+}
+
+.todo-status .todo-txt{
+    word-wrap: break-word ;
+}
+
 
 /* txt Note */
 
@@ -101,7 +116,10 @@
     border: 1px solid #e0e0e0;
     padding: 0.5em;
     background-color: inherit;
+}
 
+.txt-note-content span{
+    word-wrap: break-word ;
 }
 
 @media (max-width: 600px) {
@@ -114,5 +132,8 @@
     }
     .notes-container{
         width: 100%;
+    }
+    input.todo-txt {
+        width: 40vw;
     }
 }

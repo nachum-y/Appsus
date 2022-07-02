@@ -6,10 +6,11 @@ export default{
 
             <div class="todo-status">
                 <span class="action-btn todo-btn" @click="update('toggle',index, list)"><icons :name="setIcon" color="#777"/></span>
-                <span class="todo-txt">{{todo.txt}}</span>
+                <span v-if="!isEditable" class="todo-txt">{{todo.txt}}</span>
+                <input v-else @focusout="update('txt',index, list)"  class="todo-txt clean-style" v-model="todo.txt"/>
             </div>
             <span v-if="isEditable" class="todo-date">{{formatedDate}}</span>
-            <span class="remove-todo-btn" @click="update('remove',index, list)"> x </span>
+            <span class="remove-todo-btn action-btn" @click="update('remove',index, list)"><icons :name="'delete-todo'" color="#777"/></span>
 
     `,
     methods: {

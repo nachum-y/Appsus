@@ -10,7 +10,7 @@ export default{
         <section v-if="notes" class="note-app">
             <router-view @removeNote="removeNote" @updated="update"/>
             <note-add @newNote="addNote"/>
-            <note-list :notes="notesToShow" @removeNote="removeNote" @copyNote="copyNote" @togglepin="togglepin"/>
+            <note-list :notes="notesToShow" @removeNote="removeNote" @copyNote="copyNote" @togglepin="togglepin" @save="save"/>
         </section>
     `,
     components:{
@@ -55,6 +55,9 @@ export default{
         update(updatedNote){
             const idx = this.notes.findIndex(note => note.id === updatedNote.id)
             this.notes.splice(idx,1,updatedNote)
+        },
+        save(note){
+            noteService.updateNote(note).then(updatedNote => this.update(updatedNote))
         }
     },
     computed: {

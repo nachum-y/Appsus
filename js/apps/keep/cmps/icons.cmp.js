@@ -10,7 +10,11 @@ export default {
         <svg v-if="name === 'unpinned'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"  :fill="color"><path fill="none" d="M0 0h24v24H0z"/><path d="M17 4v7l2 3v2h-6v5l-1 1-1-1v-5H5v-2l2-3V4c0-1.1.9-2 2-2h6c1.11 0 2 .89 2 2zM9 4v7.75L7.5 14h9L15 11.75V4H9z"/></svg>
         <svg v-if="name === 'todo'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" :fill="color"><path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>
         <svg v-if="name === 'done'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" :fill="color"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/><path d="M18 9l-1.4-1.4-6.6 6.6-2.6-2.6L6 13l4 4z"/></svg>
+        <svg v-if="name === 'delete-todo'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" :fill="color"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <svg v-if="name === 'new-todo'" height="16px" width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" :fill="color"><path d="m38 26h-12v12h-4v-12h-12v-4h12v-12h4v12h12v4z"/><path d="m0 0h48v48h-48z" fill="none"/></svg>
+        <svg v-if="name === 'color'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" :fill="color">  <path d="M12 22C6.49 22 2 17.51 2 12S6.49 2 12 2s10 4.04 10 9c0 3.31-2.69 6-6 6h-1.77c-.28 0-.5.22-.5.5 0 .12.05.23.13.33.41.47.64 1.06.64 1.67A2.5 2.5 0 0 1 12 22zm0-18c-4.41 0-8 3.59-8 8s3.59 8 8 8c.28 0 .5-.22.5-.5a.54.54 0 0 0-.14-.35c-.41-.46-.63-1.05-.63-1.65a2.5 2.5 0 0 1 2.5-2.5H16c2.21 0 4-1.79 4-4 0-3.86-3.59-7-8-7z"/><circle cx="6.5" cy="11.5" r="1.5"/>  <circle cx="9.5" cy="7.5" r="1.5"/><circle cx="14.5" cy="7.5" r="1.5"/><circle cx="17.5" cy="11.5" r="1.5"/></svg>
+        <svg v-if="name === 'color-circle'" height="100%" width="100%" viewBox="0 0 100 100" :fill="color" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" stroke-width="5"/></svg>
+        <svg v-if="name === 'color-circle-defult'" height="100%" width="100%" viewBox="0 0 100 100" :fill="color" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" stroke-width="5"/></svg>
 
-
-`,
+`,      
 }

@@ -1,0 +1,50 @@
+.color-menu {
+    opacity: 1;
+    background-color: white;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+    opacity: 1;
+    overflow: hidden;
+    position: absolute;
+    bottom:-2em;
+    left: -50%;
+    -webkit-transition: opacity 0.218s linear;
+    transition: opacity 0.218s linear;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+}
+
+.screen .color-menu {
+    bottom:-2em;
+    left: 10%;
+}
+
+
+.color-menu .color {
+    display: flex;
+    width: 2.5rem;
+    padding: auto;
+    
+}
+
+.color.defult svg{
+    stroke: #e2e2e2;
+}
+
+.color-menu .color svg:hover,.color.defult svg:hover{
+    stroke: black;
+}
+
+.color-menu .color.selected svg{
+    stroke: purple;
+}
+
+@media (max-width: 600px) {
+    .color-menu {
+        bottom:-5em;
+        left: 0;
+        flex-wrap: wrap;
+    }
+}

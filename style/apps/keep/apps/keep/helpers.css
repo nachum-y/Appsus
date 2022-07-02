@@ -31,5 +31,10 @@
     fill: black;
 }
 
+.clean-style{
+    border: none;
+    background-color: inherit
+}
+
 
 
