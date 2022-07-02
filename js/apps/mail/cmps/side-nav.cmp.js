@@ -24,7 +24,7 @@ export default {
     methods: {
         newCompose() {
             console.log('newCompose() called');
-            this.$router.push({ name: 'newCompose', params: { showCopose: true} })
+            this.$router.push({ name: 'newCompose', params: { showCopose: true},key:this.$route.fullPath })
 
             // router.push('+/compose=new')
         }

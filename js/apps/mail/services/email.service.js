@@ -119,7 +119,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "odio@yahoo.couk",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 8630,
@@ -131,7 +131,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "a.magna@aol.couk",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 7581,
@@ -143,7 +143,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "sagittis.augue.eu@icloud.ca",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 7173,
@@ -155,7 +155,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "magnis.dis@google.couk",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 6438,
@@ -167,7 +167,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "magna.ut.tincidunt@outlook.ca",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 6184,
@@ -179,7 +179,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "dictum.eu@google.edu",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 3592,
@@ -191,7 +191,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "purus@yahoo.net",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 530,
@@ -203,7 +203,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "velit.justo@aol.org",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 5938,
@@ -215,7 +215,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "nunc.sed@yahoo.com",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 5979,
@@ -227,7 +227,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "ante.blandit.viverra@outlook.couk",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 9903,
@@ -239,7 +239,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "et@outlook.edu",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 2568,
@@ -251,7 +251,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "ac@google.edu",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 5592,
@@ -263,7 +263,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "nec.urna@icloud.net",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 9974,
@@ -275,7 +275,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "amet@protonmail.com",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 5821,
@@ -287,7 +287,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "nec.ligula@aol.edu",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 8579,
@@ -299,7 +299,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "egestas@hotmail.ca",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 4846,
@@ -311,7 +311,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "condimentum@outlook.net",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 854,
@@ -323,7 +323,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "et.rutrum@yahoo.com",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 2652,
@@ -335,7 +335,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "sapien.cras@protonmail.couk",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 434,
@@ -347,7 +347,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "nulla.in@protonmail.edu",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 4953,
@@ -359,7 +359,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "enim@google.couk",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 7813,
@@ -371,7 +371,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "fringilla.mi.lacinia@google.couk",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 9749,
@@ -383,7 +383,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "elit.pretium@google.org",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 6742,
@@ -395,7 +395,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "at.auctor@aol.couk",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 6095,
@@ -407,7 +407,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "elit.aliquam.auctor@icloud.ca",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 1457,
@@ -419,7 +419,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "id@google.couk",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 7566,
@@ -431,7 +431,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "amet.consectetuer.adipiscing@icloud.net",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 3731,
@@ -443,7 +443,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "ipsum.leo@icloud.com",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 6743,
@@ -455,7 +455,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "nisl.sem@hotmail.edu",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 8777,
@@ -467,7 +467,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "lorem.donec.elementum@aol.edu",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 1330,
@@ -479,7 +479,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "porttitor.eros@google.edu",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 3472,
@@ -491,7 +491,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "convallis.ante@yahoo.edu",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 7015,
@@ -503,7 +503,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "luctus@yahoo.couk",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 808,
@@ -515,7 +515,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "fermentum.fermentum.arcu@protonmail.ca",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 7348,
@@ -527,7 +527,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "ac.sem.ut@yahoo.com",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 6811,
@@ -539,7 +539,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "scelerisque@protonmail.couk",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 7228,
@@ -551,7 +551,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "feugiat.sed@aol.couk",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 9730,
@@ -563,7 +563,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "non.lobortis@google.ca",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 5044,
@@ -575,7 +575,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "congue.in.scelerisque@yahoo.edu",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 4484,
@@ -587,7 +587,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "metus@protonmail.org",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 7980,
@@ -599,7 +599,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "lacus.aliquam@protonmail.net",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 2717,
@@ -611,7 +611,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "vivamus@aol.com",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 1770,
@@ -623,7 +623,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "curabitur.ut.odio@icloud.net",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 3133,
@@ -635,7 +635,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "elementum.sem.vitae@aol.com",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 337,
@@ -647,7 +647,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "tristique@google.org",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 9336,
@@ -659,7 +659,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "quisque.porttitor@outlook.couk",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 6486,
@@ -671,7 +671,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "eget.varius@aol.ca",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 8971,
@@ -683,7 +683,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "arcu.vivamus@hotmail.edu",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 7524,
@@ -695,7 +695,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "augue.malesuada@protonmail.ca",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 6380,
@@ -707,7 +707,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "cursus@yahoo.net",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 2237,
@@ -719,7 +719,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "eu@aol.com",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 3123,
@@ -731,7 +731,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "risus.odio.auctor@yahoo.ca",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 4994,
@@ -743,7 +743,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "ante.iaculis@hotmail.org",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 9093,
@@ -755,7 +755,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "a.odio@aol.com",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 8006,
@@ -767,7 +767,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "est.tempor.bibendum@icloud.net",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 2876,
@@ -779,7 +779,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "porttitor.interdum@aol.couk",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 9619,
@@ -791,7 +791,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "sem.elit.pharetra@google.com",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 4862,
@@ -803,7 +803,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "dui.cum.sociis@outlook.edu",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 5113,
@@ -815,7 +815,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "varius.ultrices.mauris@protonmail.couk",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 9550,
@@ -827,7 +827,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "sed.auctor.odio@google.edu",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 6489,
@@ -839,7 +839,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "nec.diam@google.org",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 5515,
@@ -851,7 +851,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "lobortis@outlook.ca",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 2720,
@@ -863,7 +863,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "scelerisque.dui@yahoo.edu",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 2338,
@@ -875,7 +875,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "ornare.sagittis@outlook.org",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 6581,
@@ -887,7 +887,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "magna.cras.convallis@protonmail.ca",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 9896,
@@ -899,7 +899,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "vulputate@protonmail.couk",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 7328,
@@ -911,7 +911,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "et@yahoo.com",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 1917,
@@ -923,7 +923,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "donec.dignissim@yahoo.couk",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 8150,
@@ -935,7 +935,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "sed.et@outlook.net",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 1192,
@@ -947,7 +947,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "sed.nulla@icloud.net",
             "categories": "social",
-            "lables":['starred']
+            "lables": ['starred']
         },
         {
             "id": 9244,
@@ -959,7 +959,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "sit.amet.risus@outlook.ca",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 7976,
@@ -971,7 +971,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "sit.amet.metus@yahoo.org",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 3009,
@@ -983,7 +983,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "rhoncus.proin.nisl@yahoo.org",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 6868,
@@ -995,7 +995,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "nulla.eu@google.ca",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 1956,
@@ -1007,7 +1007,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "mus.aenean@protonmail.org",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 2697,
@@ -1019,7 +1019,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "dolor.dolor@yahoo.ca",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 7787,
@@ -1031,7 +1031,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "mus@yahoo.edu",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 798,
@@ -1043,7 +1043,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "egestas.aliquam@protonmail.edu",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 1061,
@@ -1055,7 +1055,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "donec.dignissim@icloud.edu",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 7565,
@@ -1067,7 +1067,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "pellentesque.a.facilisis@protonmail.ca",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 8014,
@@ -1079,7 +1079,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "mauris@outlook.couk",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 50,
@@ -1091,7 +1091,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "adipiscing@outlook.com",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 7089,
@@ -1103,7 +1103,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "sit.amet@outlook.net",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 788,
@@ -1115,7 +1115,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "luctus.lobortis@outlook.net",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 6750,
@@ -1127,7 +1127,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "lorem@yahoo.ca",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 7094,
@@ -1139,7 +1139,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "praesent@google.edu",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 3112,
@@ -1151,7 +1151,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "auctor.velit@outlook.net",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 233,
@@ -1163,7 +1163,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "a.arcu@outlook.com",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 4012,
@@ -1175,7 +1175,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "vitae@yahoo.org",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 596,
@@ -1187,7 +1187,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "nec.tempus@hotmail.org",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 1000,
@@ -1199,7 +1199,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "felis.adipiscing@google.org",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 6334,
@@ -1211,7 +1211,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "luctus.lobortis@google.edu",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 9904,
@@ -1223,7 +1223,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "sit.amet@aol.net",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 8950,
@@ -1235,7 +1235,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "duis.risus@outlook.edu",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 6711,
@@ -1247,7 +1247,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "nec.tempus@yahoo.couk",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 2050,
@@ -1259,7 +1259,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "semper.cursus@yahoo.com",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 4332,
@@ -1271,7 +1271,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "enim@yahoo.ca",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 2092,
@@ -1283,7 +1283,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "sed.libero@yahoo.ca",
             "categories": "promotions",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 8330,
@@ -1295,7 +1295,7 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "ipsum.suspendisse@protonmail.com",
             "categories": "social",
-            "lables":[]
+            "lables": []
         },
         {
             "id": 9259,
@@ -1307,11 +1307,14 @@ function getAllMails() {
             "to": "user@appsus.com",
             "email": "sed.pede@protonmail.net",
             "categories": "social",
-            "lables":[]
+            "lables": []
         }
     ]
     const JsonObject = JSON.parse(JSON.stringify(mails))
     const sortMailAsc = JsonObject.sort((a, b) => b.sentAt - a.sentAt)
+    sortMailAsc.forEach(mail => {
+        mail.id = mail.id.toString()
+    })
 
     return sortMailAsc
 }

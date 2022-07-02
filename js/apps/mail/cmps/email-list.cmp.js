@@ -12,7 +12,8 @@ import showMsgInMailList from '../cmps/show-msg-in-mail-list.cmp.js'
 export default {
     props: ['mails','currPage','showsPerPage'],
     template: `
-    <section @click="closeActionsModal" class="mail-list" v-if="mails" >
+
+    <section @click="closeActionsModal" class="mail-list" v-if="mails && !this.$route.params.mailId" >
     <list-emails-action-menu/>
       <div v-for="mail in mails.slice(currPage*showsPerPage,(currPage+1)*showsPerPage)" :key="mail.id">
             <email-list-row-privew :mail="mail" 
@@ -30,7 +31,8 @@ export default {
                                 @makeAsUnReadMail="$emit('makeAsUnReadMail',$event)"
                                 @makeAsReadMail="$emit('makeAsReadMail',$event)" />
       <show-msg-in-mail-list :mails="mails" :taba="this.$route.query.tab+'EmptyMsg'"/>
-    
+      <router-view :key="$router.path"></router-view>
+      
 </section>
 `,
     data() {
@@ -51,7 +53,7 @@ export default {
     },
     created() {
         this.unReadMailsList()
-
+       
     },
     methods: {
         showMailToggle(mail) {

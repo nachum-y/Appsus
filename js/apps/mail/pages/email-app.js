@@ -5,7 +5,7 @@ import { eventBus } from '../../../services/eventBus-service.js'
 import emailList from '../cmps/email-list.cmp.js'
 import emailHeader from '../cmps/email-header.cmp.js'
 import sideNav from '../cmps/side-nav.cmp.js'
-import mainEmailApp from '../cmps/main-email-app.js'
+// import mainEmailApp from '../cmps/main-email-app.js'
 import emailFilter from '../cmps/email-filter.cmp.js'
 
 export default {
@@ -21,14 +21,14 @@ export default {
                     @starredMail="starredMail"
                     @makeAsReadMail="makeAsReadMail"
                     @makeAsUnReadMail="makeAsUnReadMail"/> 
-        <router-view></router-view>
+        <router-view ></router-view>
     </section>
 `,
     components: {
         emailList,
         emailHeader,
         sideNav,
-        mainEmailApp,
+        // mainEmailApp,
         emailFilter,
 
     },
@@ -67,8 +67,6 @@ export default {
             this.$router.replace({ path: '/mail', query: { tab: 'inbox' } })
             this.filters.inbox = 'inbox'
         }
-
-
         this.filters[this.$route.query.tab] = true
 
 
@@ -160,11 +158,6 @@ export default {
             if (mail) return mail.lables.findIndex(lable => lable === label)
 
         },
-        onSetFilterBy() {
-            const queryStringParams = `?tab="test"`
-            const newUrl = window.location.protocol + '//' + window.location.host + window.location.pathname + queryStringParams
-            window.history.pushState({ path: newUrl }, '', newUrl)
-        },
         makeAsReadMail(mail) {
             mail.isRead = true
             const mailId = mail.id
@@ -208,17 +201,17 @@ export default {
             }
             if (this.filters?.sent) {
                 mails = mails.filter(mail => mail.to !== 'user@appsus.com')
-                this.$router.push({ query: { ...this.$route.query, tab: 'sent' } })
+                this.$router.replace({ query: { ...this.$route.query, tab: 'sent' } })
             }
             if (this.filters?.inbox) {
                 mails = mails.filter(mail => mail.to === 'user@appsus.com')
-                this.$router.push({ query: { ...this.$route.query, tab: 'inbox' } })
+                this.$router.replace({ query: { ...this.$route.query, tab: 'inbox' } })
             }
             if (this.filters?.starred) {
                 mails = mails.filter(mail => {
                     const idx = this.foundLabel('starred', mail)
                     if (!isNaN(idx) && idx !== -1) {
-                        this.$router.push({ query: { ...this.$route.query, tab: 'starred' } })
+                        this.$router.replace({ query: { ...this.$route.query, tab: 'starred' } })
                         return mail
 
                     }
@@ -226,7 +219,7 @@ export default {
             }
             if (this.filters?.unread) {
                 mails = this.mails.filter(mail => mail.isRead !== true)
-                this.$router.push({ query: { ...this.$route.query, tab: 'unread' } })
+                this.$router.replace({ query: { ...this.$route.query, tab: 'unread' } })
             }
             // return mails.slice(this.page * this.showsPerPage, (this.page * this.showsPerPage)+this.showsPerPage)
             return mails

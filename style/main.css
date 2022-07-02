@@ -25,6 +25,7 @@
 @import 'apps/mail/right-click-actions-menu.css';
 @import 'apps/mail/mail-preview-in-search.css';
 @import 'apps/mail/mail-list-top-actions.css';
+@import 'apps/mail/mail-preview-mail-page.css';
 
 /* Media Queries */
 @import 'mq/mq.css';
