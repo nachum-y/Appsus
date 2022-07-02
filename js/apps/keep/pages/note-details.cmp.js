@@ -8,7 +8,7 @@ export default {
     template: `
         <div @click.prevent.self="close" class="screen">
             <div v-if="note" :class="note.type" class="note details" :style="applyBackgroundColor()" >
-            <div class="pin-btn action-btn" @click="togglepin(note)"><icons name="unpinned" color="#777" /></div>
+            <div class="pin-btn action-btn" @click="togglepin"><icons name="unpinned" color="#777" /></div>
                 
                 <div class="note-content">
                     <note-preview @updateNote="update" :note="note" :isEditable="isEditable"/>
@@ -51,6 +51,9 @@ export default {
             noteService.updateNote(this.note).then(note => {
                 this.$emit('updated', note)
             })
+        },
+        togglepin(){
+            this.$emit('togglepin', this.note)
         },
         getBackground(){
             if(!this.note.style) return '#fff'
