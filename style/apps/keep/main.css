@@ -4,6 +4,7 @@
 @import 'apps/keep/cmps/note.css';
 @import 'apps/keep/cmps/note-details.css';
 @import 'apps/keep/cmps/color-menu.css';
+@import 'apps/keep/cmps/header.css';
 
 /* Helpers */
 @import 'apps/keep/helpers.css'

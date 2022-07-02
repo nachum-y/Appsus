@@ -8,6 +8,7 @@ export default {
                         <span @click="setType('note-txt')"><icons name="txt" color="#777777"/></span>
                         <span @click="setType('note-img')"><icons name="img" color="#777777"/></span>
                         <span @click="setType('note-todos')"><icons name="list" color="#777777"/></span>
+                        <span @click="setType('note-video')"><icons name="video" color="#777777"/></span>
                    </div>
             </div>
         </div>
@@ -48,6 +49,9 @@ export default {
                     break
                 case 'note-todos':
                     this.placeholder = `Enter comma separated list`
+                    break
+                case 'note-video':
+                        this.placeholder = `Enter YouTube URL`
                     break
                 default:
                     this.placeholder = `What's on your mind?`

@@ -6,7 +6,7 @@ export default {
     emits: ['updateNote'],
     name: 'note-todo-list',
     template: `
-            <h3 class="note-title">{{info.label}}</h3>
+            <h3 class="note-title">{{info.title}}</h3>
             
             <div v-if="active" class="active-todos todos-list">
                 <ul class="clean-list">

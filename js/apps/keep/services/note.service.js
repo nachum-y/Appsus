@@ -40,7 +40,7 @@ const gNotes = [
         id: "n103",
         type: "note-todos",
         info: {
-            label: "Get my stuff together",
+            title: "Get my stuff together",
             todos: [
                 { txt: "Driving liscence", doneAt: null },
                 { txt: "Coding power", doneAt: 187111111 }
@@ -77,6 +77,14 @@ const gNotes = [
         info: {
             url: "https://media.giphy.com/media/ubWffxIKlnCPdNfvZ9/giphy.gif",
             title: "Print 3 AppSus"
+        },
+    },
+    {
+        id: "n108",
+        type: "note-video",
+        info: {
+            url: "https://www.youtube.com/watch?v=6hzrDeceEKc&ab_channel=Oasis",
+            title: "Wonderwall"
         },
     },
 ]
@@ -136,12 +144,14 @@ function _prepareNoteInfo(note) {
             return { txt: data.split('\n') }
         case 'note-img':
             return { url: data, title: '' }
+            case 'note-video':
+                return { url: data, title: '' }
         case 'note-todos':
             let todos = []
             data.split(',').map(txt => {
                 let todo = { txt, doneAt: null }
                 todos.push(todo)
             })
-            return { label: "Get my stuff together", todos }
+            return { title: "Get my stuff together", todos }
     }
 }

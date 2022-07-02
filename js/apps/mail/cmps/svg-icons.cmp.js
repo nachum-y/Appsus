@@ -154,6 +154,14 @@ export default {
 <path d="M0.874268 10.2075L5.0726 6L0.874268 1.7925L2.16677 0.5L7.66677 6L2.16677 11.5L0.874268 10.2075Z" fill="black" fill-opacity="0.37"/>
 </svg>
 
+<svg v-if="name === 'keep-logo'" width="44" height="40" viewBox="0 0 64 88" xmlns="http://www.w3.org/2000/svg">
+	<path fill="#ffba00" d="m58 88h-52c-3.32 0-6-2.68-6-6v-76c0-3.32 2.68-6 6-6h36l22 22v60c0 3.32-2.68 6-6 6z" width="44" height="40"/>
+	<path fill="#ff9500" d="m42 0 22 22h-22z"/>
+	<path fill="#ffffff" d="m39 59h-14v5h14z"/>
+	<path fill="#ffffff" d="m32 30c-7.18 0-13 5.82-13 13 0 4.64 2.42 8.7 6.08 11h13.8c3.65-2.3 6.08-6.36 6.08-11 0-7.18-5.82-13-13-13z"/>
+</svg>
+
+
     `,
 
     data() {

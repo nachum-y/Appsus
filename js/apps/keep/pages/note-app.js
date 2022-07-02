@@ -4,11 +4,13 @@ import { noteService } from "../services/note.service.js"
 import noteList from "../cmps/note-list.cmp.js"
 import noteAdd from "../cmps/note-add.cmp.js"
 import noteDetails from "./note-details.cmp.js"
-
+import noteHeader from "../cmps/note-header-cmp.js"
 export default{
     template: ` 
         <section v-if="notes" class="note-app">
+            
             <router-view @removeNote="removeNote" @updated="update" @togglepin="togglepin"/>
+            <note-header @inputTxt="searchByTxt"/>
             <note-add @newNote="addNote"/>
             <note-list :notes="notesToShow" @removeNote="removeNote" @copyNote="copyNote" @togglepin="togglepin" @save="save"/>
         </section>
@@ -17,10 +19,12 @@ export default{
         noteList,
         noteAdd,
         noteDetails,
+        noteHeader
     },
     data() {
         return {
             notes: null,
+            searchFilter: null
         }
     },
     created() {
@@ -58,11 +62,30 @@ export default{
         },
         save(note){
             noteService.updateNote(note).then(updatedNote => this.update(updatedNote))
+        },
+        searchByTxt(input){
+            if (input === '') this.searchFilter = null 
+            else this.searchFilter = input
         }
     },
     computed: {
         notesToShow() {
-            const notes = this.notes
+            let notes = this.notes
+            
+            if (this.searchFilter){
+                const regex = new RegExp(this.searchFilter, "i")
+                notes = notes.filter(note =>
+                    {   if (note.type === 'note-img') return regex.test(note.info.title)
+                        if (note.type === 'note-txt'){
+                            return note.info.txt.some(line => regex.test(line))
+                        }
+                        if (note.type === 'note-todos') return regex.test(note.info.title)
+                        else return false
+                    }
+                )
+
+
+            }
             return notes
         },
         

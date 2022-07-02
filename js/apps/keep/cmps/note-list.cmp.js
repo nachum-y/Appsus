@@ -30,7 +30,7 @@ export default {
                             <span class="action-btn color-btn" @click="openMenu(note.id)"><icons name="color" color="#777" /></span>
                         </div>
                         <div class="color-menu" v-if="selectedNote === note.id" @click-outside="closeColorMenu">
-                            <color-menu @setBgColor="setBgColor" :noteColor="note.style.backgroundColor"/>
+                            <color-menu @setBgColor="setBgColor" :noteColor="getBackground(note)"/>
                         </div>
 
                 </div>
