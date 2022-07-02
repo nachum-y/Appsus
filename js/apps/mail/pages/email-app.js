@@ -9,8 +9,9 @@ import sideNav from '../cmps/side-nav.cmp.js'
 import emailFilter from '../cmps/email-filter.cmp.js'
 
 export default {
+    emits:['openHeader'],
     template: `
-    <email-header :mailToSearch="mailToSearch" @inputTxt="filterMailsToSearch"/>
+    <email-header :mailToSearch="mailToSearch" @inputTxt="filterMailsToSearch" @openHeader="$emit('openHeader')"/>
     <section v-if="mails" class="main-email-app">
         <side-nav :mails="mails" :unReadMails="unReadMails" @sideNavTab="filterMailsbyType" />
         <email-list :mails="mailsToDisplay"

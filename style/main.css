@@ -14,6 +14,7 @@
 /* APPS */
 @import 'apps/keep/main.css';
 @import 'apps/mail/main.css';
+@import 'apps/header/main.css';
 
 /* mail */
 @import 'apps/mail/side-nav.css';

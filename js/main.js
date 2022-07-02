@@ -5,17 +5,31 @@ import userMsg from './cmps/user-msg.cmp.js'
 const options = {
     template: `
         <section>
-            <app-header />
+            <app-header v-if="isOpenHeader" @closeHeader="closeHeader" />
             <user-msg/>
-            <router-view/>
+            <router-view @openHeader="openHeader"/>
         </section>
 
     `,
+    data() {
+        return {
+            isOpenHeader: null
+        }
+    },
     components: {
         appHeader,
-        userMsg
+        userMsg,
+    },
+    methods: {
+        openHeader() {
+            this.isOpenHeader = true
+            console.log(this.isOpenHeader)
+        },
+        closeHeader() {
+            this.isOpenHeader = false
+        }
     }
-};
+}
 
 
 const app = Vue.createApp(options)

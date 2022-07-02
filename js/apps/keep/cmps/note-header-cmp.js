@@ -3,7 +3,7 @@ export default {
     template: `
     <header class="main-header-mail-app">
         <div class="left-side">
-            <svg-icons name="menu"/>
+            <span @click="$emit('openHeader')"><svg-icons name="menu"/></span>
             <svg-icons name="keep-logo"/> 
             <span class="keep-logo">Keep</span>
         </div>
