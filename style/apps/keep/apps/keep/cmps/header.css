@@ -59,3 +59,17 @@
     vertical-align: middle;
     color: #5f6368;
 }
+
+@media (max-width: 600px) {
+    .main-header-mail-app.keep .right-side {
+        display: none;
+    }
+
+    .main-header-mail-app.keep .center {
+        justify-content: flex-end;
+    }
+
+    .main-header-mail-app.keep .search-mail {
+        width: 100%;
+    }
+}

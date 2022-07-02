@@ -1,7 +1,7 @@
 import svgIcons from '../../mail/cmps/svg-icons.cmp.js'
 export default {
     template: `
-    <header class="main-header-mail-app">
+    <header class="main-header-mail-app keep">
         <div class="left-side">
             <span @click="$emit('openHeader')"><svg-icons name="menu"/></span>
             <svg-icons name="keep-logo"/> 
