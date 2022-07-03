@@ -26,7 +26,8 @@ export default {
                     @makeAsReadMail="makeAsReadMail"
                     @makeAsUnReadMail="makeAsUnReadMail"
                     @activeCetToggle="filterMailsbyType"
-                    @paginationBtn="paginationSet"/> 
+                    @paginationBtn="paginationSet"
+                    @moveToCet="moveToCet" /> 
         <router-view @removeMail="removeMail"></router-view>
     </section>
 `,
@@ -211,11 +212,21 @@ export default {
             console.log(page)
             this.page += page
         },
-        filterMailsbyTxt(input){
+        filterMailsbyTxt(input) {
             this.$router.replace({ query: { ...this.$route.query, tab: 'inbox' } })
             this.filters = mailService.setFilter()
             this.filters.txt = input
-        }
+        },
+        moveToCet(cet, mail) {
+            mail.categories = cet
+            const mailId = mail.id
+            mailService.get(mailId).then(mail => {
+                this.mailToEdit = mail
+                this.mailToEdit.categories = cet
+                mailService.save(this.mailToEdit).then(mail => {
+                })
+            })
+        },
     },
     computed: {
         mailsToDisplay() {
@@ -267,7 +278,7 @@ export default {
                 this.page = 0
                 mails = this.mails.filter(mail => mail.categories === 'promotions')
                 this.$router.replace({ query: { ...this.$route.query, tab: 'inbox' } })
-                
+
             }
 
             return mails

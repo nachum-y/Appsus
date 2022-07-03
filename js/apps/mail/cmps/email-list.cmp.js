@@ -38,7 +38,8 @@ export default {
                                 :pos="posModal" 
                                 @removeMail="$emit('RemoveMail',$event)"
                                 @makeAsUnReadMail="$emit('makeAsUnReadMail',$event)"
-                                @makeAsReadMail="$emit('makeAsReadMail',$event)" />
+                                @makeAsReadMail="$emit('makeAsReadMail',$event)"
+                                @moveToCet="moveingToCet" />
       <show-msg-in-mail-list :mails="mails" :taba="this.$route.query.tab+'EmptyMsg'"/>
       <router-view :key="$router.path"></router-view>
       
@@ -92,6 +93,9 @@ export default {
             this.showMailActionMenu = null
 
         },
+        moveingToCet(cet,mail){
+            this.$emit('moveToCet',cet,mail)
+        }
 
 
 

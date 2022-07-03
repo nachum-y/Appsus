@@ -6,7 +6,9 @@ export default {
         <div class="delet-action-right-click" @click="$emit('RemoveMail',mail)"><span><svg-icons name="draft"/></span><span>Delete</span></div>
         <div v-if="mail.isRead" class="delet-action-right-click" @click="$emit('makeAsUnReadMail',mail)"><span><svg-icons name="unread"/></span><span> Mark as unread</span></div>
         <div v-if="!mail.isRead" class="delet-action-right-click" @click="$emit('makeAsReadMail',mail)"><span><svg-icons name="unread"/></span><span> Mark as read</span></div>
-        <div class="delet-action-right-click"><span><svg-icons name="draft"/></span><span> Move To:</span></div>
+        <div v-if="mail.categories !== 'social'" class="delet-action-right-click" @click="$emit('moveToCet','social',mail)"><span><svg-icons name="moveTo"/></span><span> Move To: Social</span></div>
+        <div v-if="mail.categories !== 'promotions'" class="delet-action-right-click" @click="$emit('moveToCet','promotions',mail)"><span><svg-icons name="moveTo"/></span><span> Move To: Promotions</span></div>
+
     
     </section>
 `,

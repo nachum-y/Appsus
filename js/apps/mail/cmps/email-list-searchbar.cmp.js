@@ -8,7 +8,9 @@ export default {
     template: `
     <section class="mail-list" v-if="mailsSearch" >
       <div v-for="mail in mailsSearch" :key="mail.id">
-            <email-list-row-privew-in-searchbar :mail="mail" />
+         <router-link :key="$route.fullPath" :to="'/mail/'+mail.id">
+             <email-list-row-privew-in-searchbar :mail="mail" />
+          </router-link>
       </div>
       <div class="press-enter-msg" v-if="mailsSearch.length > 0">
         <p class="search-for-msg"><span><svg-icons name="search" /></span>All search results for "{{input}}"</p>
