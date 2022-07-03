@@ -2,10 +2,13 @@
     /* main app colors google */
     --yellow: #F2BE42;
     --green: #58A55C;
+    --darkGreen: #3C7D40;
     --red: #D95140;
     --darkRed: #C84031;
     --lightRed: rgba(249, 233, 231, 1);
     --blue: #5186EC;
+    --darkBlue: #3474E0;
+     
 
     /* Primary Texr Colors  */
     --ptxt1: #202124;

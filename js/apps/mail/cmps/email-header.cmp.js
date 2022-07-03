@@ -2,7 +2,7 @@ import svgIcons from './svg-icons.cmp.js'
 import emailListSearchbar from './email-list-searchbar.cmp.js'
 import appHeader from '../../../cmps/app-header.cmp.js'
 export default {
-    emits:['openHeader'],
+    emits: ['openHeader','searchInput'],
     props: ['mailToSearch'],
     template: `
     <header class="main-header-mail-app">
@@ -12,7 +12,7 @@ export default {
         </div>
         <div class="center">
             <label ref="searchBar" for="search-mail" class="search-mail">
-                <input @focus="activeModal=true" @focusout="activeModal=false" type="search" name="search-mail"  v-model="inputTxt"  @input="$emit('inputTxt',inputTxt)" id="search-mail" placeholder="Search mail">
+                <input ref="inputSearch" @focus="activeModal=true" @focusout="activeModal=false" @keyup.enter="onEnter"  type="search" name="search-mail"  v-model="inputTxt"  @input="$emit('inputTxt',inputTxt)" id="search-mail" placeholder="Search mail">
                 <svg-icons name="search_icon"/>   
                 <div v-if="mailToSearch" class="searchModal-header" :class="{activeModal:activeModal}" :style="modalPosHieght" ><email-list-searchbar :mailsSearch="mailToSearch" :input="inputTxt" /></div>
             </label>
@@ -37,7 +37,12 @@ export default {
         }
     },
     created() { },
-    methods: {},
+    methods: {
+        onEnter() {
+            this.$emit('searchInput', this.inputTxt)
+            this.activeModal = false
+        }
+    },
     computed: {
     },
     unmounted() { },

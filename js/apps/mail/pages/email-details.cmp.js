@@ -15,7 +15,7 @@ export default {
     <div class="top-mail-privew">
         <h2 class="mail-preview-subject">{{mail.subject}}</h2>
         <div class="actions-mail-privew">
-            <button @click="$router.push('/mail')">GO BACK</button> 
+            <span @click="$router.push('/mail')"><svg-icons name="backArrow"/></span> 
             <span @click="removeMail"><svg-icons name="draft"/></span> 
         </div>
     </div>

@@ -9,9 +9,12 @@ import sideNav from '../cmps/side-nav.cmp.js'
 import emailFilter from '../cmps/email-filter.cmp.js'
 
 export default {
-    emits:['openHeader'],
+    emits: ['openHeader'],
     template: `
-    <email-header :mailToSearch="mailToSearch" @inputTxt="filterMailsToSearch" @openHeader="$emit('openHeader')"/>
+    <email-header :mailToSearch="mailToSearch" 
+                  @inputTxt="filterMailsToSearch" 
+                  @openHeader="$emit('openHeader')"
+                  @searchInput="filterMailsbyTxt"/>
     <section v-if="mails" class="main-email-app">
         <side-nav :mails="mails" :unReadMails="unReadMails" @sideNavTab="filterMailsbyType" />
         <email-list :mails="mailsToDisplay"
@@ -21,7 +24,9 @@ export default {
                     @removeMail="removeMail" 
                     @starredMail="starredMail"
                     @makeAsReadMail="makeAsReadMail"
-                    @makeAsUnReadMail="makeAsUnReadMail"/> 
+                    @makeAsUnReadMail="makeAsUnReadMail"
+                    @activeCetToggle="filterMailsbyType"
+                    @paginationBtn="paginationSet"/> 
         <router-view @removeMail="removeMail"></router-view>
     </section>
 `,
@@ -48,6 +53,8 @@ export default {
                 starred: null,
                 draft: null,
                 trash: null,
+                social: null,
+                promotions: null,
 
             },
             mailToEdit: null,
@@ -97,7 +104,7 @@ export default {
             this.filters.txt = filter
         },
         filterMailsbyType(type) {
-          
+            console.log(type)
             switch (type) {
                 case 'sent':
                     this.filters = mailService.setFilter()
@@ -122,6 +129,20 @@ export default {
                 case 'trash':
                     this.filters = mailService.setFilter()
                     this.filters.trash = 'trash'
+                    break
+                case 'primary':
+                    this.filters = mailService.setFilter()
+                    this.filters.primary = 'primary'
+                    break
+
+                case 'social':
+                    console.log('social')
+                    this.filters = mailService.setFilter()
+                    this.filters.social = 'social'
+                    break
+                case 'promotions':
+                    this.filters = mailService.setFilter()
+                    this.filters.promotions = 'promotions'
                     break
 
                 default:
@@ -180,44 +201,75 @@ export default {
             const regex = new RegExp(input, 'i')
             mails = mails.filter(mail => regex.test(mail.body))
             if (mails) {
-                
-                this.mailToSearch =mails.slice(0, 5)
+
+                this.mailToSearch = mails.slice(0, 5)
             }
             if (!input) this.mailToSearch = null
 
+        },
+        paginationSet(page) {
+            console.log(page)
+            this.page += page
+        },
+        filterMailsbyTxt(input){
+            this.$router.replace({ query: { ...this.$route.query, tab: 'inbox' } })
+            this.filters = mailService.setFilter()
+            this.filters.txt = input
         }
     },
     computed: {
         mailsToDisplay() {
             var mails = this.mails
             if (this.filters?.txt) {
+                this.page = 0
                 const regex = new RegExp(this.filters.txt, 'i')
                 mails = mails.filter(mail => regex.test(mail.body))
             }
             if (this.filters?.sent) {
+                this.page = 0
                 mails = mails.filter(mail => mail.to !== 'user@appsus.com')
                 this.$router.replace({ query: { ...this.$route.query, tab: 'sent' } })
             }
             if (this.filters?.inbox) {
+                this.page = 0
                 mails = mails.filter(mail => mail.to === 'user@appsus.com')
                 this.$router.replace({ query: { tab: 'inbox' } })
                 // this.$router.replace({ query: { ...this.$route.query, tab: 'inbox' } })
             }
             if (this.filters?.starred) {
+                this.page = 0
                 mails = mails.filter(mail => {
+                    this.$router.replace({ query: { ...this.$route.query, tab: 'starred' } })
                     const idx = this.foundLabel('starred', mail)
                     if (!isNaN(idx) && idx !== -1) {
-                        this.$router.replace({ query: { ...this.$route.query, tab: 'starred' } })
+
                         return mail
 
                     }
                 })
             }
             if (this.filters?.unread) {
+                this.page = 0
                 mails = this.mails.filter(mail => mail.isRead !== true)
                 this.$router.replace({ query: { ...this.$route.query, tab: 'unread' } })
             }
-            // return mails.slice(this.page * this.showsPerPage, (this.page * this.showsPerPage)+this.showsPerPage)
+            if (this.filters?.social) {
+                this.page = 0
+                mails = this.mails.filter(mail => mail.categories === 'social')
+                this.$router.replace({ query: { ...this.$route.query, tab: 'inbox' } })
+            }
+            if (this.filters?.primary || this.filters?.inbox) {
+                this.page = 0
+                mails = mails.filter(mail => mail.to === 'user@appsus.com' && (mail.categories !== 'promotions' && mail.categories !== 'social'))
+                this.$router.replace({ query: { ...this.$route.query, tab: 'inbox' } })
+            }
+            if (this.filters?.promotions) {
+                this.page = 0
+                mails = this.mails.filter(mail => mail.categories === 'promotions')
+                this.$router.replace({ query: { ...this.$route.query, tab: 'inbox' } })
+                
+            }
+
             return mails
         }
     },

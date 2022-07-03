@@ -10,11 +10,16 @@ import showMsgInMailList from '../cmps/show-msg-in-mail-list.cmp.js'
 
 
 export default {
-    props: ['mails','currPage','showsPerPage'],
+    props: ['mails', 'currPage', 'showsPerPage'],
     template: `
 
     <section @click="closeActionsModal" class="mail-list" v-if="mails && !this.$route.params.mailId" >
-    <list-emails-action-menu/>
+    <list-emails-action-menu @activeCetToggle="$emit('activeCetToggle',$event)"
+                             :currPage="currPage"
+                             :showsPerPage="showsPerPage"
+                             :mails="mails"
+                             @paginationBtn="$emit('paginationBtn',$event)"/>
+        
       <div v-for="mail in mails.slice(currPage*showsPerPage,(currPage+1)*showsPerPage)" :key="mail.id">
             <email-list-row-privew :mail="mail" 
             @starredMail="$emit('starredMail',$event)" 
@@ -22,7 +27,11 @@ export default {
             @click.right.prevent="openActionsModal($event,mail)" 
             :class="[showMail === mail ? 'show-mail-open' : '',isRead(mail) ? 'read-mail' : 'unread-mail']" />
 
-            <email-list-in-row-privew v-if="showMail === mail" :mail="showMail" @removeMail="$emit('RemoveMail',mail)"/>
+            <email-list-in-row-privew v-if="showMail === mail" 
+            :mail="showMail" 
+            @removeMail="$emit('RemoveMail',mail)"
+            @makeAsUnReadMail="$emit('makeAsUnReadMail',$event)"/>
+
       </div>
       <right-click-actions-menu v-if="showMailActionMenu"  
                                 :mail="showMailActionMenu" 
@@ -53,7 +62,7 @@ export default {
     },
     created() {
         this.unReadMailsList()
-       
+
     },
     methods: {
         showMailToggle(mail) {

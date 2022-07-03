@@ -128,6 +128,7 @@
     align-items: center;
     height: 4rem;
     position: relative;
+    transition: all 1sec;
 }
 
 .categories-tabs>* {
@@ -148,6 +149,7 @@
     left: 0;
     isolation: isolate;
     background-color: #EDEFF1;
+    transition: all 1s;
 
 }
 
@@ -156,28 +158,53 @@
     margin: 0 1.25rem;
 }
 
-.categories-tabs .active {
+.categories-tabs .categories-tab-primary.active {
     color: var(--darkRed);
     fill: var(--darkRed);
 }
 
-.categories-tab-primary.active:before {
+.categories-tabs .categories-tab-social.active {
+    color: var(--darkBlue);
+    fill: var(--darkBlue);
+    stroke: var(--darkBlue);
+}
+
+.categories-tabs .categories-tab-promotions.active {
+    color: var(--darkGreen);
+    fill: var(--darkGreen);
+    stroke: var(--darkGreen);
+}
+
+.categories-tabs .active:before {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
     bottom: 0;
     max-width: 16rem;
-    width: 25%;
+    width: 24%;
     content: "";
     display: block;
     height: 3px;
     right: 0;
     margin: 0 8px;
     position: absolute;
+    background-color: transparent;
+}
+
+.categories-tab-primary.active:before {
     left: 0;
     background-color: var(--darkRed);
+}
+
+.categories-tab-social.active:before {
+    left: 25%;
+    background-color: var(--darkBlue);
 
 }
 
+.categories-tab-promotions.active:before {
+    left: 50%;
+    background-color: var(--darkGreen);
+}
 
 .action-menu {
     border-bottom: 1px solid #EDEFF1;
@@ -225,6 +252,30 @@ svg.svg-icons-actions:hover>* {
     fill-opacity: 0.8;
 }
 
+.categories-tabs>* {
+    display: flex;
+    align-items: center;
+}
+
+.mail-preview.checkBoxSelected {
+    background-color: #C2DBFF;
+}
+.cetegories-preview{
+    border-radius: 0.6rem;
+    margin-inline-end: 0.5rem;
+    letter-spacing: 0.0075em;
+    padding: 0.25rem;
+}
+.cetegories-preview.promotions {
+    background: #98D7E4;
+    
+
+
+}
+.cetegories-preview.social {
+    background: #B3EFD3;
+    
+}
 
 @media (max-width: 750px) {
     .categories-tabs {

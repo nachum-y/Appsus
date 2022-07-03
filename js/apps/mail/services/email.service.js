@@ -56,7 +56,12 @@ function setFilter() {
         inbox: null,
         unread: null,
         sent: null,
-        type: null,
+        starred: null,
+        draft: null,
+        trash: null,
+        social: null,
+        promotions: null,
+
     })
 }
 
@@ -118,7 +123,7 @@ function getAllMails() {
             "sentAt": 1632798783000,
             "to": "user@appsus.com",
             "email": "odio@yahoo.couk",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -142,7 +147,7 @@ function getAllMails() {
             "sentAt": 1637466556000,
             "to": "user@appsus.com",
             "email": "sagittis.augue.eu@icloud.ca",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -154,7 +159,7 @@ function getAllMails() {
             "sentAt": 1637840282000,
             "to": "user@appsus.com",
             "email": "magnis.dis@google.couk",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -166,7 +171,7 @@ function getAllMails() {
             "sentAt": 1644905851000,
             "to": "user@appsus.com",
             "email": "magna.ut.tincidunt@outlook.ca",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -178,7 +183,7 @@ function getAllMails() {
             "sentAt": 1643566700000,
             "to": "user@appsus.com",
             "email": "dictum.eu@google.edu",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -190,7 +195,7 @@ function getAllMails() {
             "sentAt": 1646045029000,
             "to": "user@appsus.com",
             "email": "purus@yahoo.net",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -202,7 +207,7 @@ function getAllMails() {
             "sentAt": 1645853729000,
             "to": "user@appsus.com",
             "email": "velit.justo@aol.org",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -214,7 +219,7 @@ function getAllMails() {
             "sentAt": 1635354566000,
             "to": "user@appsus.com",
             "email": "nunc.sed@yahoo.com",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -226,7 +231,7 @@ function getAllMails() {
             "sentAt": 1638569669000,
             "to": "user@appsus.com",
             "email": "ante.blandit.viverra@outlook.couk",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -238,7 +243,7 @@ function getAllMails() {
             "sentAt": 1631657006000,
             "to": "user@appsus.com",
             "email": "et@outlook.edu",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -250,7 +255,7 @@ function getAllMails() {
             "sentAt": 1653305270000,
             "to": "user@appsus.com",
             "email": "ac@google.edu",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -262,7 +267,7 @@ function getAllMails() {
             "sentAt": 1651799847000,
             "to": "user@appsus.com",
             "email": "nec.urna@icloud.net",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -274,7 +279,7 @@ function getAllMails() {
             "sentAt": 1629245208000,
             "to": "user@appsus.com",
             "email": "amet@protonmail.com",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -286,7 +291,7 @@ function getAllMails() {
             "sentAt": 1640194013000,
             "to": "user@appsus.com",
             "email": "nec.ligula@aol.edu",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -298,7 +303,7 @@ function getAllMails() {
             "sentAt": 1653696189000,
             "to": "user@appsus.com",
             "email": "egestas@hotmail.ca",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -310,7 +315,7 @@ function getAllMails() {
             "sentAt": 1652319563000,
             "to": "user@appsus.com",
             "email": "condimentum@outlook.net",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -322,7 +327,7 @@ function getAllMails() {
             "sentAt": 1645833323000,
             "to": "user@appsus.com",
             "email": "et.rutrum@yahoo.com",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -334,7 +339,7 @@ function getAllMails() {
             "sentAt": 1653184503000,
             "to": "user@appsus.com",
             "email": "sapien.cras@protonmail.couk",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -346,7 +351,7 @@ function getAllMails() {
             "sentAt": 1630899279000,
             "to": "user@appsus.com",
             "email": "nulla.in@protonmail.edu",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -358,7 +363,7 @@ function getAllMails() {
             "sentAt": 1649538928000,
             "to": "user@appsus.com",
             "email": "enim@google.couk",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -370,7 +375,7 @@ function getAllMails() {
             "sentAt": 1631453492000,
             "to": "user@appsus.com",
             "email": "fringilla.mi.lacinia@google.couk",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -382,7 +387,7 @@ function getAllMails() {
             "sentAt": 1631456258000,
             "to": "user@appsus.com",
             "email": "elit.pretium@google.org",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -394,7 +399,7 @@ function getAllMails() {
             "sentAt": 1642387038000,
             "to": "user@appsus.com",
             "email": "at.auctor@aol.couk",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -406,7 +411,7 @@ function getAllMails() {
             "sentAt": 1631178556000,
             "to": "user@appsus.com",
             "email": "elit.aliquam.auctor@icloud.ca",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -418,7 +423,7 @@ function getAllMails() {
             "sentAt": 1625581795000,
             "to": "user@appsus.com",
             "email": "id@google.couk",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -430,7 +435,7 @@ function getAllMails() {
             "sentAt": 1648661675000,
             "to": "user@appsus.com",
             "email": "amet.consectetuer.adipiscing@icloud.net",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -442,7 +447,7 @@ function getAllMails() {
             "sentAt": 1625751798000,
             "to": "user@appsus.com",
             "email": "ipsum.leo@icloud.com",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -454,7 +459,7 @@ function getAllMails() {
             "sentAt": 1636367919000,
             "to": "user@appsus.com",
             "email": "nisl.sem@hotmail.edu",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -466,7 +471,7 @@ function getAllMails() {
             "sentAt": 1625491618000,
             "to": "user@appsus.com",
             "email": "lorem.donec.elementum@aol.edu",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -478,7 +483,7 @@ function getAllMails() {
             "sentAt": 1644754600000,
             "to": "user@appsus.com",
             "email": "porttitor.eros@google.edu",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -490,7 +495,7 @@ function getAllMails() {
             "sentAt": 1645726916000,
             "to": "user@appsus.com",
             "email": "convallis.ante@yahoo.edu",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -502,7 +507,7 @@ function getAllMails() {
             "sentAt": 1641972909000,
             "to": "user@appsus.com",
             "email": "luctus@yahoo.couk",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -514,7 +519,7 @@ function getAllMails() {
             "sentAt": 1641748346000,
             "to": "user@appsus.com",
             "email": "fermentum.fermentum.arcu@protonmail.ca",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -526,7 +531,7 @@ function getAllMails() {
             "sentAt": 1647703486000,
             "to": "user@appsus.com",
             "email": "ac.sem.ut@yahoo.com",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -538,7 +543,7 @@ function getAllMails() {
             "sentAt": 1647734733000,
             "to": "user@appsus.com",
             "email": "scelerisque@protonmail.couk",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -550,7 +555,7 @@ function getAllMails() {
             "sentAt": 1653944199000,
             "to": "user@appsus.com",
             "email": "feugiat.sed@aol.couk",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -562,7 +567,7 @@ function getAllMails() {
             "sentAt": 1647347094000,
             "to": "user@appsus.com",
             "email": "non.lobortis@google.ca",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -574,7 +579,7 @@ function getAllMails() {
             "sentAt": 1647597427000,
             "to": "user@appsus.com",
             "email": "congue.in.scelerisque@yahoo.edu",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -586,7 +591,7 @@ function getAllMails() {
             "sentAt": 1653618284000,
             "to": "user@appsus.com",
             "email": "metus@protonmail.org",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -598,7 +603,7 @@ function getAllMails() {
             "sentAt": 1632869279000,
             "to": "user@appsus.com",
             "email": "lacus.aliquam@protonmail.net",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -610,7 +615,7 @@ function getAllMails() {
             "sentAt": 1630937766000,
             "to": "user@appsus.com",
             "email": "vivamus@aol.com",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -622,7 +627,7 @@ function getAllMails() {
             "sentAt": 1649026388000,
             "to": "user@appsus.com",
             "email": "curabitur.ut.odio@icloud.net",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -634,7 +639,7 @@ function getAllMails() {
             "sentAt": 1642735892000,
             "to": "user@appsus.com",
             "email": "elementum.sem.vitae@aol.com",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -646,7 +651,7 @@ function getAllMails() {
             "sentAt": 1647932034000,
             "to": "user@appsus.com",
             "email": "tristique@google.org",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -658,7 +663,7 @@ function getAllMails() {
             "sentAt": 1629097935000,
             "to": "user@appsus.com",
             "email": "quisque.porttitor@outlook.couk",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -670,7 +675,7 @@ function getAllMails() {
             "sentAt": 1628491771000,
             "to": "user@appsus.com",
             "email": "eget.varius@aol.ca",
-            "categories": "promotions",
+            "categories": "",
             "lables": []
         },
         {
@@ -694,7 +699,7 @@ function getAllMails() {
             "sentAt": 1648753904000,
             "to": "user@appsus.com",
             "email": "augue.malesuada@protonmail.ca",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -706,7 +711,7 @@ function getAllMails() {
             "sentAt": 1628209200000,
             "to": "user@appsus.com",
             "email": "cursus@yahoo.net",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -718,7 +723,7 @@ function getAllMails() {
             "sentAt": 1648072970000,
             "to": "user@appsus.com",
             "email": "eu@aol.com",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -778,7 +783,7 @@ function getAllMails() {
             "sentAt": 1641283149000,
             "to": "user@appsus.com",
             "email": "porttitor.interdum@aol.couk",
-            "categories": "social",
+            "categories": "",
             "lables": []
         },
         {
@@ -946,7 +951,7 @@ function getAllMails() {
             "sentAt": 1655962577000,
             "to": "user@appsus.com",
             "email": "sed.nulla@icloud.net",
-            "categories": "social",
+            "categories": "",
             "lables": ['starred']
         },
         {
